@@ -32,7 +32,7 @@ import shlex
 # ones.
 #extensions = [
 #    'sphinx.ext.todo',
-    # For some reason there seems to be a conflict between mathjax and 
+    # For some reason there seems to be a conflict between mathjax and
     # other extensions causing non-proper rendering of LaTeX math code.
     # To avoid these errors we use the extension pngmath.
     # For the document to render properly dvipng must be uninstalled from your system
@@ -48,7 +48,7 @@ import shlex
     # See README.txt in toggleblock-extension folder.
 #    'sagecell.sagecell',
     # Extension for embedding sage cells (https://sagecell.sagemath.org/).
-    # See README.txt in sagecell-extension folder. 
+    # See README.txt in sagecell-extension folder.
 #    'hoverrole.hoverrole',
     # Extension for providing Icelandic to English translation of mathematical terms
     # on mouse-over. See README in hoverrole folder.
@@ -64,7 +64,8 @@ extensions = [
 
     # Katex is a substitute for mathjax, renders math much faster
     # Note: katex extension must come before sagecell to work properly
-    'katex.katex',
+    #'katex.katex',
+    'sphinxcontrib.katex',
 
     # hieroglyph is used to generate html slides, needs to be installed for use,
     # see https://github.com/nyergler/hieroglyph
@@ -79,7 +80,7 @@ extensions = [
     'hoverrole.hoverrole',
 
     # Extension for embedding tracking code from google-analytics and custom scroll depth measurement
-    'analytics.analytics',
+#    'analytics.analytics',
 
     'sphinx.ext.ifconfig'
 ]
@@ -100,13 +101,19 @@ math_eqref_format = '{number}'
 ga_id = 'UA-78633732-10'
 enable_custom_scrolldepth = True
 
-# The mathjax path needs to be set to https in order to work on notendur.hi.is, it can be changed here to suit other needs 
+# The mathjax path needs to be set to https in order to work on notendur.hi.is, it can be changed here to suit other needs
 #mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-
-katex_path = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/katex.min.js'
-katex_render = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/contrib/auto-render.min.js'
-render_math = 'rendermath.js'
-katex_css = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/katex.min.css'
+katex_css_path = 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css'
+katex_js_path = 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js'
+#katex_autorender_path = 'https://cdn.jsdelivr.net/npm/katex@0.12.0/contrib/auto-render.min.js'
+#katex_inline = [r'\(', r'\)']
+#katex_display = [r'\[', r'\]']
+katex_prerender = False
+katex_options = ''
+#katex_path = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/katex.min.js'
+#katex_render = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/contrib/auto-render.min.js'
+#render_math = 'rendermath.js'
+#katex_css = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/katex.min.css'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -142,10 +149,10 @@ release = '2018'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-# LANGUAGE SET TO ICELANDIC, CAN BE CHANGED: 
+# LANGUAGE SET TO ICELANDIC, CAN BE CHANGED:
 # (http://sphinx-doc.org/config.html#confval-language)
 language = 'is'
-locale_dirs = ['locale/'] 
+locale_dirs = ['locale/']
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:

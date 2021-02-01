@@ -1,0 +1,2158 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10. Aðhvarfsgreining &mdash; Tölfræði frá grunni 2018</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon_2.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/katex-math.css" type="text/css" />
+  
+
+  
+
+	<!-- hoverrole.py css code -->
+	<style type="text/css">
+		a.tooltip {outline:none; border-bottom: thin dotted; background: #ffeedd}
+		a.tooltip strong {line-height:30px;}
+		a.tooltip:hover {text-decoration:none;} 
+		a.tooltip span {
+		    z-index:10;display:none; padding:14px 20px;
+		    margin-top:-30px; margin-left:12px;
+		    width:310px; line-height:16px;
+		}
+		a.tooltip:hover span{
+		    display:inline; position:absolute; color:#111;
+		    border:1px solid #DCA; background:#fffAF0;}
+		.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}
+		    
+		/*CSS3*/
+		a.tooltip span
+		{
+		    border-radius:4px;
+		    box-shadow: 5px 5px 8px #CCC;
+		}
+	</style>
+	<!-- End hoverrole.py css code -->
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+
+		/* - Begin equation reference style - */
+		h6.eqno{
+			display: inline-block;
+			padding-left: 10px;
+		}
+
+		h6 .headerlink{
+			display: inline-block !important;
+		}
+		h6 .headerlink:after{
+			visibility: hidden !important;
+		}
+		h6 .headerlink:hover:after{
+			visibility: visible !important;
+		}
+		.eqno:hover > .headerlink:after{
+			visibility: visible !important;
+		}
+
+		table > caption > .headerlink{
+			visibility: hidden !important;
+		}
+
+		table > caption > .headerlink{
+			visibility: hidden !important;
+		}
+		/* - End - */
+
+	</style>
+
+
+    
+        <link rel="index" title="Atriðaskrá"
+              href="genindex.html"/>
+        <link rel="search" title="Leit" href="search.html"/>
+    <link rel="top" title="Tölfræði frá grunni 2018" href="index.html"/>
+        <link rel="next" title="11. Tvíkosta aðhvarfsgreining" href="kafli10_final.html"/>
+        <link rel="prev" title="9. Fervikagreining" href="kafli08_final.html"/>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+	
+
+     
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> Tölfræði frá grunni
+        
+
+        
+          
+          <img src="_static/hi_horiz_raunvisindadeild.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Leit" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="kafli00_final.html">1. Inngangur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli00_final.html#framsetning">1.1. Framsetning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli00_final.html#id1">1.1.1. Framsetning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli00_final.html#ahersluatrii-ensk-ying-ef-vi-a">1.1.1.1. Áhersluatriði (Ensk þýðing ef við á)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli00_final.html#yfirlit-yfir-efni-bokarinnar">1.2. Yfirlit yfir efni bókarinnar</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli01_final.html">2. Frá tilraun til gagna</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli01_final.html#urtak-og-yi">2.1. Úrtak og þýði</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id1">2.1.1. Úrtak og þýði</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#yi-population">2.1.1.1. Þýði (population)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#urtak-sample">2.1.1.2. Úrtak (sample)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli01_final.html#breytur">2.2. Breytur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id2">2.2.1. Breytur</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#breyta-variable">2.2.1.1. Breyta (variable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#flokkabreytur-categorical-variables">2.2.1.2. Flokkabreytur (categorical variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#rou-flokkabreyta-ordinal-categorical-variable">2.2.1.3. Röðuð flokkabreyta (ordinal categorical variable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#orou-flokkabreyta-categorical-variable">2.2.1.4. Óröðuð flokkabreyta (categorical variable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#talnabreytur-numerical-variables">2.2.1.5. Talnabreytur (numerical variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#samfelldar-breytur-continuous-variables">2.2.1.6. Samfelldar breytur (continuous variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#strjalar-breytur-discrete-variables">2.2.1.7. Strjálar breytur (discrete variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#svarbreytur-og-skyribreytur-response-and-explanatory-variables">2.2.1.8. Svarbreytur og skýribreytur (response and explanatory variables)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#nyjar-breytur-bunar-til">2.2.2. Nýjar breytur búnar til</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli01_final.html#bjagi-og-breytileiki">2.3. Bjagi og breytileiki</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id3">2.3.1. Bjagi og breytileiki</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#breytileiki-variability">2.3.1.1. Breytileiki (variability)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#bjagi-bias">2.3.1.2. Bjagi (bias)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli01_final.html#urtakshogun">2.4. Úrtakshögun</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id4">2.4.1. Úrtakshögun</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#urtaksbjagi-sampling-bias">2.4.1.1. Úrtaksbjagi (Sampling bias)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#slembival-randomization">2.4.1.2. Slembival (randomization)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#einfalt-og-lagskipt-slembiurtak">2.4.2. Einfalt og lagskipt slembiúrtak</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#einfalt-slembiurtak-simple-random-sample">2.4.2.1. Einfalt slembiúrtak (simple random sample)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#lagskipt-slembiurtak-stratified-random-sample">2.4.2.2. Lagskipt slembiúrtak (stratified random sample)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#para-slembiurtak">2.4.3. Parað slembiúrtak</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#para-slembiurtak-paired-random-sample">2.4.3.1. Parað slembiúrtak (paired random sample)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#hva-ef-slembiurtak-er-ogerlegt">2.4.4. Hvað ef slembiúrtak er ógerlegt?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#algengar-urtaksaferir-sem-ekki-eru-slembiurtok">2.4.5. Algengar úrtaksaðferðir sem ekki eru slembiúrtök</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#vontun-maelinga">2.4.6. Vöntun mælinga</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#vontun-maelinga-missing-values">2.4.6.1. Vöntun mælinga (missing values)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli01_final.html#blindun">2.5. Blindun</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#rannsakandabjagi-og-lyfleysuahrif">2.5.1. Rannsakandabjagi og lyfleysuáhrif</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#rannsakandabjagi-experimenters-bias">2.5.1.1. Rannsakandabjagi (experimenters bias)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#lyfleysa-placebo">2.5.1.2. Lyfleysa (placebo)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#lyfleysuahrif-placebo-effect">2.5.1.3. Lyfleysuáhrif (placebo effect)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#einblindar-og-tviblindar-rannsoknir">2.5.2. Einblindar og tvíblindar rannsóknir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#tviblindar-rannsoknir-double-blind-trials">2.5.2.1. Tvíblindar rannsóknir (double-blind trials)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#einblindar-rannsoknir-single-blind-trials">2.5.2.2. Einblindar rannsóknir (single-blind trials)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli01_final.html#orsakasamband">2.6. Orsakasamband</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id7">2.6.1. Orsakasamband</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#styr-tilraun-controlled-experiment">2.6.1.1. Stýrð tilraun (controlled experiment)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#hvaa-skilyri-aetti-styr-tilraun-a-uppfylla">2.6.1.2. Hvaða skilyrði ætti stýrð tilraun að uppfylla?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli01_final.html#orsakasamband-causation">2.6.1.3. Orsakasamband (causation)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli01_final.html#daemi">2.7. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id8">2.7.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id9">2.7.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id10">2.7.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id11">2.7.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id12">2.7.5. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id13">2.7.6. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id14">2.7.7. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id15">2.7.8. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id16">2.7.9. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id17">2.7.10. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id18">2.7.11. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id19">2.7.12. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id20">2.7.13. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id21">2.7.14. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli01_final.html#id22">2.7.15. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli02_final.html">3. Myndræn framsetning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli02_final.html#stoplarit-og-kokurit">3.1. Stöplarit og kökurit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#stoplarit">3.1.1. Stöplarit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#stoplarit-bar-chart">3.1.1.1. Stöplarit (bar chart)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#synidaemi-stoplarit">3.1.1.2. Sýnidæmi: Stöplarit</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#kokurit">3.1.2. Kökurit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#kokurit-pie-chart">3.1.2.1. Kökurit (pie chart)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#synidaemi-kokurit">3.1.2.2. Sýnidæmi: Kökurit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli02_final.html#stularit">3.2. Stuðlarit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#ss-studlarit">3.2.1. Stuðlarit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#stularit-histogram">3.2.1.1. Stuðlarit (histogram)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#synidaemi-stularit">3.2.1.2. Sýnidæmi: Stuðlarit</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#logun-stularita-og-utlagar">3.2.2. Lögun stuðlarita og útlagar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#logun-dreifinga-shape-of-distributions">3.2.2.1. Lögun dreifinga (Shape of distributions)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#utlagar-outliers">3.2.2.2. Útlagar (Outliers)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli02_final.html#kassarit">3.3. Kassarit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#id2">3.3.1. Kassarit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#kassarit-boxplot">3.3.1.1. Kassarit (Boxplot)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#synidaemi-kassarit">3.3.1.2. Sýnidæmi: Kassarit</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#ast-iqr-reglan-fyrir-utlaga">3.3.2. 1.5 <span class="math">\(\!\ast\!\)</span> IQR reglan fyrir útlaga</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#id3">3.3.2.1. 1.5 <span class="math">\(\!\ast\!\)</span> IQR reglan fyrir útlaga</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#ast-iqr-reglan-og-kassarit">3.3.3. 1.5 <span class="math">\(\!\ast\!\)</span> IQR reglan og kassarit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli02_final.html#punktarit">3.4. Punktarit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#id4">3.4.1. Punktarit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#punktarit-scatter-plot">3.4.1.1. Punktarit (scatter plot)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#synidaemi-punktarit">3.4.1.2. Sýnidæmi: Punktarit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli02_final.html#synidaemi-punktarit-me-flokkabreytu">3.4.1.3. Sýnidæmi: Punktarit með flokkabreytu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli02_final.html#daemi">3.5. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#id5">3.5.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#id6">3.5.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#id7">3.5.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#id8">3.5.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli02_final.html#id9">3.5.5. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli03_final.html">4. Lýsandi tölfræði</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#lysistaerir">4.1. Lýsistærðir</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id1">4.1.1. Lýsistærðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#lysistaer-statistic">4.1.1.1. Lýsistærð (statistic)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#visir-index">4.1.1.2. Vísir (index)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#lysistaerir-fyrir-miju">4.2. Lýsistærðir fyrir miðju</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id2">4.2.1. Lýsistærðir fyrir miðju</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#mija-maelinga-central-tendency">4.2.1.1. Miðja mælinga (central tendency)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#mija-spannar">4.2.2. Miðja spannar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#mija-spannar-mid-range">4.2.2.1. Miðja spannar (mid range)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-mija-spannar">4.2.2.2. Sýnidæmi: Miðja spannar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#tiasta-gildi">4.2.3. Tíðasta gildi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#tiasta-gildi-mode">4.2.3.1. Tíðasta gildi (mode)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-tiasta-gildi">4.2.3.2. Sýnidæmi: Tíðasta gildi</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#migildi">4.2.4. Miðgildi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#migildi-median">4.2.4.1. Miðgildi (median)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-migildi-n-er-oddatala">4.2.4.2. Sýnidæmi: Miðgildi - <span class="math">\(n\)</span> er oddatala</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-migildi-n-er-slett-tala">4.2.4.3. Sýnidæmi: Miðgildi - <span class="math">\(n\)</span> er slétt tala</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#mealtal">4.2.5. Meðaltal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#mealtal-mean-arithmetic-mean">4.2.5.1. Meðaltal (mean, arithmetic mean)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-summutakn-og-visar">4.2.5.2. Sýnidæmi: Summutákn og vísar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-mealtal">4.2.5.3. Sýnidæmi: Meðaltal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#vegi-mealtal">4.2.6. Vegið meðaltal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#vegi-mealtal-weighted-mean">4.2.6.1. Vegið meðaltal (weighted mean)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-vegi-mealtal">4.2.6.2. Sýnidæmi: Vegið meðaltal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#samanburur-a-mealtali-og-migildi">4.2.7. Samanburður á meðaltali og miðgildi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#id3">4.2.7.1. Samanburður á meðaltali og miðgildi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#lysistaerir-fyrir-breytileika">4.3. Lýsistærðir fyrir breytileika</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id4">4.3.1. Lýsistærðir fyrir breytileika</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#breytileiki-maelinga-spread">4.3.1.1. Breytileiki mælinga (spread)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#sponn">4.3.2. Spönn</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#sponn-range">4.3.2.1. Spönn (range)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-sponn">4.3.2.2. Sýnidæmi: Spönn</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#fjorungamork">4.3.3. Fjórðungamörk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#fjorungamork-quartiles">4.3.3.1. Fjórðungamörk (quartiles)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-fjorungamork">4.3.3.2. Sýnidæmi: Fjórðungamörk</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#fimm-tolu-samantekt">4.3.4. Fimm tölu samantekt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#fimm-tolu-samantekt-five-number-summary">4.3.4.1. Fimm tölu samantekt (five-number summary)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-fimm-tolu-samantekt">4.3.4.2. Sýnidæmi: Fimm tölu samantekt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#fjorungasponn">4.3.5. Fjórðungaspönn</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#fjorungasponn-interquartile-range">4.3.5.1. Fjórðungaspönn (interquartile range)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-fjorungasponn">4.3.5.2. Sýnidæmi: Fjórðungaspönn</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#prosentumork">4.3.6. Prósentumörk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#prosentumork-percentile">4.3.6.1. Prósentumörk (percentile)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#dreifni">4.3.7. Dreifni</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#dreifni-variance">4.3.7.1. Dreifni (variance)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-dreifni">4.3.7.2. Sýnidæmi: Dreifni</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#staalfravik">4.3.8. Staðalfrávik</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#staalfravik-standard-deviation">4.3.8.1. Staðalfrávik (standard deviation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-staalfravik">4.3.8.2. Sýnidæmi: Staðalfrávik</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#fravikshlutfall">4.3.9. Frávikshlutfall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#fravikshlutfall-coefficient-of-variation">4.3.9.1. Frávikshlutfall (coefficient of variation)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#samanburur-a-lysistaerum-fyrir-breytileika">4.3.10. Samanburður á lýsistærðum fyrir breytileika</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#fylgnistuull">4.4. Fylgnistuðull</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#jafna-beinnar-linu">4.4.1. Jafna beinnar línu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#jafna-beinnar-linu-straight-line-equation">4.4.1.1. Jafna beinnar línu (straight line equation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#linulegt-samband">4.4.1.2. Línulegt samband</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#fylgnistuull-urtaks">4.4.2. Fylgnistuðull úrtaks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#fylgnistuull-urtaks-sample-coefficient-of-correlation">4.4.2.1. Fylgnistuðull úrtaks (sample coefficient of correlation)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#stefna-og-styrkleiki-linulegs-sambands">4.4.3. Stefna og styrkleiki línulegs sambands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#stefna-linulegs-sambands">4.4.3.1. Stefna línulegs sambands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#styrkleiki-linulegs-sambands">4.4.3.2. Styrkleiki línulegs sambands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#lysistaerir-fyrir-samband-hlutfalla">4.5. Lýsistærðir fyrir samband hlutfalla</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#ahaettuhlutfall">4.5.1. Áhættuhlutfall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#ahaettuhlutfall-relative-risk">4.5.1.1. Áhættuhlutfall (relative risk)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#tulkun-ahaettuhlutfalls">4.5.1.2. Túlkun áhættuhlutfalls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-ahaettuhlutfall">4.5.1.3. Sýnidæmi: Áhættuhlutfall</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#gagnlikindahlutfall">4.5.2. Gagnlíkindahlutfall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#gagnlikindi-odds">4.5.2.1. Gagnlíkindi (odds)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#gagnlikindahlutfall-odds-ratio">4.5.2.2. Gagnlíkindahlutfall (odds ratio)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#tulkun-gagnlikindahlutfalls">4.5.2.3. Túlkun gagnlíkindahlutfalls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-gagnlikindahlutfall">4.5.2.4. Sýnidæmi: Gagnlíkindahlutfall</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#lysistaerir-fyrir-flokkunaraferir">4.6. Lýsistærðir fyrir flokkunaraðferðir</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id5">4.6.1. Lýsistærðir fyrir flokkunaraðferðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#sannar-og-falskar-jakvaear-og-neikvaear-maelingar">4.6.1.1. Sannar og falskar, jákvæðar og neikvæðar mælingar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#naemi-sensitivity">4.6.1.2. Næmi (sensitivity)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#sertaeki-specificity">4.6.1.3. Sértæki (specificity)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#synidaemi-sertaeki">4.6.1.4. Sýnidæmi: Sértæki</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#jakvaett-forspargildi-positive-predictive-value">4.6.1.5. Jákvætt forspárgildi (positive predictive value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli03_final.html#neikvaett-forspargildi-negative-predictive-value">4.6.1.6. Neikvætt forspárgildi (negative predictive value)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#samantekt-um-lysistaerir">4.7. Samantekt um lýsistærðir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kafli03_final.html#daemi">4.8. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id6">4.8.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id7">4.8.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id8">4.8.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id9">4.8.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id10">4.8.5. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id11">4.8.6. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id12">4.8.7. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id13">4.8.8. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id14">4.8.9. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id15">4.8.10. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id16">4.8.11. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli03_final.html#id17">4.8.12. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli04_final.html">5. Líkindafræðileg undirstaða</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli04_final.html#slembistaerir">5.1. Slembistærðir</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id1">5.1.1. Slembistærðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#slembistaer-random-variable">5.1.1.1. Slembistærð (random variable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#rithattur-slembistaera-syntax-for-random-variables">5.1.1.2. Ritháttur slembistærða (syntax for random variables)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#strjalar-og-samfelldar-slembistaerir">5.1.2. Strjálar og samfelldar slembistærðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#strjalar-slembistaerir-discrete-random-variables">5.1.2.1. Strjálar slembistærðir (discrete random variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#samfelldar-slembistaerir-continuous-random-variables">5.1.2.2. Samfelldar slembistærðir (continuous random variables)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#likindadreifing-slembistaera">5.1.3. Líkindadreifing slembistærða</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#rithattur-fyrir-likindi-slembistaera">5.1.3.1. Ritháttur fyrir líkindi slembistærða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-rithattur-fyrir-likindi-slembistaera">5.1.3.2. Sýnidæmi: Ritháttur fyrir líkindi slembistærða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#likindadreifing-slembistaera-probability-distribution-of-random-variables">5.1.3.3. Líkindadreifing slembistærða (probability distribution of random variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#strjalar-og-samfelldar-likindadreifingar">5.1.3.4. Strjálar og samfelldar líkindadreifingar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#stiki-parameter">5.1.3.5. Stiki (parameter)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli04_final.html#staerfraeilegir-eiginleikar-slembistaera">5.2. Stærðfræðilegir eiginleikar slembistærða</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#ohaar-og-einsdreifar-slembistaerir">5.2.1. Óháðar og einsdreifðar slembistærðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#ohaar-slembistaerir-independent-random-variables">5.2.1.1. Óháðar slembistærðir (independent random variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#haar-slembistaerir-dependent-random-variables">5.2.1.2. Háðar slembistærðir (dependent random variables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#ohaar-og-einsdreifar-slembistaerir-iid-random-variables">5.2.1.3. Óháðar og einsdreifðar slembistærðir (iid random variables)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#logmal-mikils-fjolda">5.2.2. Lögmál mikils fjölda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#vaentigildi-slembistaera-expected-value">5.2.2.1. Væntigildi slembistærða (Expected value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#logmal-mikils-fjolda-law-of-large-numbers">5.2.2.2. Lögmál mikils fjölda (law of large numbers)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#dreifni-slembistaera-var-x">5.2.2.3. Dreifni slembistærða, <span class="math">\(Var[X]\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#linuleg-umbreyting-a-samfelldum-slembistaerum">5.2.3. Línuleg umbreyting á samfelldum slembistærðum</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#linuleg-umbreyting-linear-transformation">5.2.3.1. Línuleg umbreyting (Linear transformation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#a-breyta-til-baka">5.2.3.2. Að breyta til baka</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#vaentigildi-og-dreifni-eftir-linulega-umbreytingu">5.2.3.3. Væntigildi og dreifni eftir línulega umbreytingu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli04_final.html#strjalar-likindadreifingar">5.3. Strjálar líkindadreifingar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#massafall">5.3.1. Massafall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#massafall-mass-function">5.3.1.1. Massafall (mass function)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#reiknireglur-fyrir-strjalar-slembistaerir">5.3.2. Reiknireglur fyrir strjálar slembistærðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#e-reglur">5.3.2.1. Reiknireglur fyrir strjálar slembistærðir</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#tvikostadreifingin">5.3.3. Tvíkostadreifingin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#bernoulli-tilraun-bernoulli-trial">5.3.3.1. Bernoulli tilraun (Bernoulli trial)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#tvikostadreifingin-binomial-distribution">5.3.3.2. Tvíkostadreifingin (binomial distribution)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#tviliustuullinn-binomial-coefficient">5.3.3.3. Tvíliðustuðullinn (binomial coefficient)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-tviliustuullinn">5.3.3.4. Sýnidæmi: Tvíliðustuðullinn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-tvikostadreifingin">5.3.3.5. Sýnidæmi: Tvíkostadreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#ex-tvikostkronukast">5.3.3.6. Sýnidæmi: Tvíkostadreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id4">5.3.3.7. Sýnidæmi: Tvíkostadreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id5">5.3.3.8. Sýnidæmi: Tvíkostadreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id6">5.3.3.9. Sýnidæmi: Tvíkostadreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id7">5.3.3.10. Sýnidæmi: Tvíkostadreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id8">5.3.3.11. Sýnidæmi: Tvíkostadreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#vaentigildi-og-dreifni-tvikostadreifingarinnar">5.3.3.12. Væntigildi og dreifni tvíkostadreifingarinnar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-vaentigildi-og-dreifni-tvikostadreifingarinnar">5.3.3.13. Sýnidæmi: Væntigildi og dreifni tvíkostadreifingarinnar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#poisson-dreifingin">5.3.4. Poisson dreifingin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#poisson-dreifingin-poisson-distribution">5.3.4.1. Poisson dreifingin (Poisson distribution)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-poisson-dreifingin">5.3.4.2. Sýnidæmi: Poisson dreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id9">5.3.4.3. Sýnidæmi: Poisson dreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#poisson-dreifingin-logu-a-nyrri-einingu">5.3.4.4. Poisson dreifingin löguð að nýrri einingu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-poisson-dreifingin-logu-a-nyrri-einingu">5.3.4.5. Sýnidæmi: Poisson dreifingin löguð að nýrri einingu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id10">5.3.4.6. Sýnidæmi: Poisson dreifingin löguð að nýrri einingu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id11">5.3.4.7. Sýnidæmi: Poisson dreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#vaentigildi-og-dreifni-poisson-dreifingar">5.3.4.8. Væntigildi og dreifni Poisson dreifingar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id12">5.3.4.9. Sýnidæmi: Poisson dreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#samanburur-a-tvikosta-og-poisson-dreifingunni">5.3.4.10. Samanburður á tvíkosta- og Poisson dreifingunni</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli04_final.html#samfelldar-likindadreifingar">5.4. Samfelldar líkindadreifingar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id13">5.4.1. Samfelldar líkindadreifingar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#reiknireglur-fyrir-samfelldar-slembistaerir">5.4.1.1. Reiknireglur fyrir samfelldar slembistærðir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#dreififall-distribution-function">5.4.1.2. Dreififall (Distribution function)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#ettifall-og-ettiferill-density-function-and-density-curve">5.4.1.3. Þéttifall og þéttiferill (Density function and density curve)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#normaldreifing">5.4.2. Normaldreifing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#normaldreifingin-normal-distribution">5.4.2.1. Normaldreifingin (normal distribution)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#reglan">5.4.2.2. 68-95-99.7% reglan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#stolu-normaldreifing">5.4.2.3. Stöðluð normaldreifing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#stalaa-normaldreifingin-standardized-normal-distribution">5.4.2.4. Staðlaða normaldreifingin (Standardized normal distribution)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#samband-x-og-z">5.4.2.5. Samband <span class="math">\(X\)</span> og <span class="math">\(Z\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#likur-normaldreifra-slembistaera">5.4.2.6. Líkur normaldreifðra slembistærða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#notkun-toflu-stoluu-normaldreifingarinnar">5.4.2.7. Notkun töflu stöðluðu normaldreifingarinnar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-normaldreifingin">5.4.2.8. Sýnidæmi: Normaldreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id14">5.4.2.9. Sýnidæmi: Normaldreifingin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#rithatturinn-z-a">5.4.2.10. Rithátturinn <span class="math">\(z_{a}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#id15">5.4.2.11. Rithátturinn <span class="math">\(z_{a}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-rithatturinn-z-a">5.4.2.12. Sýnidæmi: Rithátturinn <span class="math">\(z_{a}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#normaldreifingarrit">5.4.2.13. Normaldreifingarrit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#normaldreifingarrit-normal-probability-plot">5.4.2.14. Normaldreifingarrit (normal probability plot)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#arar-samfelldar-likindadreifingar">5.4.3. Aðrar samfelldar líkindadreifingar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#t-dreifing">5.4.3.1. t-dreifing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#rithatturinn-t-a-k">5.4.3.2. Rithátturinn <span class="math">\(t_{a,(k)}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-flett-upp-i-t-toflu">5.4.3.3. Sýnidæmi: Flett upp í t-töflu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#chi-2-dreifing">5.4.3.4. <span class="math">\(\chi^2\)</span>-dreifing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#rithatturinn-chi-2-a-k">5.4.3.5. Rithátturinn <span class="math">\(\chi^2_{a,(k)}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-flett-upp-i-chi-2-toflu">5.4.3.6. Sýnidæmi: Flett upp í <span class="math">\(\chi^2\)</span>-töflu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#f-dreifing">5.4.3.7. F-dreifing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#rithatturinn-f-a-v-1-v-2">5.4.3.8. Rithátturinn <span class="math">\(F_{a,(v_1,v_2)}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli04_final.html#synidaemi-flett-upp-i-f-toflu">5.4.3.9. Sýnidæmi: Flett upp í F-töflu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli04_final.html#daemi">5.5. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id16">5.5.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id17">5.5.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id18">5.5.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id19">5.5.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id20">5.5.5. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id21">5.5.6. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id22">5.5.7. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id23">5.5.8. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id24">5.5.9. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id25">5.5.10. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id26">5.5.11. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id27">5.5.12. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id28">5.5.13. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id29">5.5.14. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id30">5.5.15. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id31">5.5.16. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id32">5.5.17. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id33">5.5.18. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id34">5.5.19. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id35">5.5.20. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id36">5.5.21. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id37">5.5.22. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli04_final.html#id38">5.5.23. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli05_final.html">6. Ályktunartölfræði</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli05_final.html#urtaksdreifing-lysistaerar">6.1. Úrtaksdreifing lýsistærðar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id1">6.1.1. Úrtaksdreifing lýsistærðar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#urtaksdreifing-lysistaerar-sampling-distribution">6.1.1.1. Úrtaksdreifing lýsistærðar (sampling distribution)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli05_final.html#lysistaerin-mealtal">6.2. Lýsistærðin meðaltal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id2">6.2.1. Lýsistærðin meðaltal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#reiknireglur-fyrir-vaentigildi-slembistaera">6.2.1.1. Reiknireglur fyrir væntigildi slembistærða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#reiknireglur-fyrir-dreifni-slembistaera">6.2.1.2. Reiknireglur fyrir dreifni slembistærða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#synidaemi-vaentigildi-summu-tveggja-slembistaera">6.2.1.3. Sýnidæmi: Væntigildi summu tveggja slembistærða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#vaentigildi-og-dreifni-mealtals-expected-value-and-variance-of-the-mean">6.2.1.4. Væntigildi og dreifni meðaltals (Expected value and variance of the mean)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#staalskekkja-standard-error">6.2.1.5. Staðalskekkja (standard error)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#synidaemi-vaentigildi-og-dreifni-mealtals">6.2.1.6. Sýnidæmi: Væntigildi og dreifni meðaltals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#likindadreifing-mealtals-normaldreifra-slembistaera">6.2.1.7. Líkindadreifing meðaltals normaldreifðra slembistærða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#synidaemi-likindadreifing-mealtals-normaldreifra-slembistaera">6.2.1.8. Sýnidæmi: Líkindadreifing meðaltals normaldreifðra slembistærða</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli05_final.html#hofusetning-tolfraeinnar">6.3. Höfuðsetning tölfræðinnar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id3">6.3.1. Höfuðsetning tölfræðinnar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#hofusetning-tolfraeinnar-central-limit-theorem">6.3.1.1. Höfuðsetning tölfræðinnar (Central limit theorem)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli05_final.html#metlar-og-profstaerir">6.4. Metlar og prófstærðir</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id4">6.4.1. Metlar og prófstærðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#metill-estimator">6.4.1.1. Metill (estimator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#metill-a-mealtal-slembistaerar">6.4.1.2. Metill á meðaltal slembistærðar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#synidaemi-metlar-bar-x">6.4.1.3. Sýnidæmi: Metlar - <span class="math">\(\bar{X}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#metill-a-dreifni-slembistaerar">6.4.1.4. Metill á dreifni slembistærðar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#synidaemi-metlar-s-2">6.4.1.5. Sýnidæmi: Metlar - <span class="math">\(S^2\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#metill-a-hlutfalli-slembistaerar">6.4.1.6. Metill á hlutfalli slembistærðar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#synidaemi-metlar-p">6.4.1.7. Sýnidæmi: Metlar - <span class="math">\(P\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli05_final.html#oryggisbil">6.5. Öryggisbil</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id5">6.5.1. Öryggisbil</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#oryggisbil-confidence-interval">6.5.1.1. Öryggisbil (confidence interval)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#oryggi-confidence-level">6.5.1.2. Öryggi (confidence level)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#oryggismork-ea-vikmork-confidence-limits">6.5.1.3. Öryggismörk eða vikmörk (confidence limits)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#villulikur-type-i-error">6.5.1.4. Villulíkur (Type I error)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli05_final.html#tilgatuprof">6.6. Tilgátupróf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id6">6.6.1. Tilgátupróf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#hugmyndafraei-tilgatuprofa">6.6.1.1. Hugmyndafræði tilgátuprófa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#tilgatur">6.6.2. Tilgátur</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#nulltilgata-null-hypothesis">6.6.2.1. Núlltilgáta (null hypothesis)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#gagntilgata-alternative-hypothesis">6.6.2.2. Gagntilgáta (alternative hypothesis)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#attanir-tilgatuprofa">6.6.3. Áttanir tilgátuprófa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#einhlia-prof-one-sided-tests">6.6.3.1. Einhliða próf (one-sided tests)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#tvihlia-prof-two-sided-tests">6.6.3.2. Tvíhliða próf (two-sided tests)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#profstaerir">6.6.4. Prófstærðir</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#profstaer-test-statistic">6.6.4.1. Prófstærð (test statistic)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#hofnunarsvaei-og-alpha-stig">6.6.5. Höfnunarsvæði og <span class="math">\(\alpha\)</span>-stig</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#hofnun-nulltilgatu-rejection-of-null-hypothesis">6.6.5.1. Höfnun núlltilgátu (rejection of null hypothesis)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#hofnunarsvaei-tilgatuprofa-rejection-areas">6.6.5.2. Höfnunarsvæði tilgátuprófa (rejection areas)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#alpha-stig-alpha-level">6.6.5.3. <span class="math">\(\alpha\)</span>-stig (<span class="math">\(\alpha\)</span>-level)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#p-gildi">6.6.6. <span class="math">\(p\)</span>-gildi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#p-gildi-p-value">6.6.6.1. <span class="math">\(p\)</span>-gildi (<span class="math">\(p\)</span>-value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#p-gildi-profstaera-sem-fylgja-stoluu-normaldreifingunni">6.6.6.2. <span class="math">\(p\)</span>-gildi prófstærða sem fylgja stöðluðu normaldreifingunni</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#synidaemi-p-gildi-profstaerar-sem-fylgir-stoluu-normaldreifingunni">6.6.6.3. Sýnidæmi: P-gildi prófstærðar sem fylgir stöðluðu normaldreifingunni</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#styrkur-profa-og-villur-af-ger-i-og-ii">6.6.7. Styrkur prófa og villur af gerð I og II</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#styrkur-power">6.6.7.1. Styrkur (power)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#villa-af-ger-i-type-i-error">6.6.7.2. Villa af gerð I (Type I Error)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#villa-af-ger-ii-type-ii-error">6.6.7.3. Villa af gerð II (Type II error)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#framkvaemd-tilgatuprofa">6.6.8. Framkvæmd tilgátuprófa</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli05_final.html#id7">6.6.8.1. Framkvæmd tilgátuprófa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#samband-oryggisbila-og-tilgatuprofa">6.6.9. Samband öryggisbila og tilgátuprófa</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli05_final.html#daemi">6.7. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id8">6.7.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id9">6.7.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id10">6.7.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id11">6.7.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id12">6.7.5. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id13">6.7.6. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id14">6.7.7. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id15">6.7.8. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id16">6.7.9. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id17">6.7.10. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id18">6.7.11. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id19">6.7.12. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id20">6.7.13. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id21">6.7.14. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id22">6.7.15. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id23">6.7.16. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id24">6.7.17. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli05_final.html#id25">6.7.18. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli06_final.html">7. Ályktanir um flokkabreytur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli06_final.html#alyktanir-um-hlutfall-yis">7.1. Ályktanir um hlutfall þýðis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#normalnalgun">7.1.1. Normalnálgun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#oryggisbil-og-tilgatuprof">7.1.2. Öryggisbil og tilgátupróf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#oryggisbil-fyrir-hlutfall-yis">7.1.2.1. Öryggisbil fyrir hlutfall þýðis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#tilgatuprof-fyrir-hlutfall-yis">7.1.2.2. Tilgátupróf fyrir hlutfall þýðis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#synidaemi-alyktanir-um-hlutfall-yis">7.1.2.3. Sýnidæmi: Ályktanir um hlutfall þýðis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli06_final.html#alyktanir-um-hlutfoll-tveggja-ya">7.2. Ályktanir um hlutföll tveggja þýða</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id1">7.2.1. Ályktanir um hlutföll tveggja þýða</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#oryggisbil-fyrir-hlutfoll-tveggja-ya">7.2.1.1. Öryggisbil fyrir hlutföll tveggja þýða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#tilgatuprof-fyrir-hlutfoll-tveggja-ya">7.2.1.2. Tilgátupróf fyrir hlutföll tveggja þýða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#synidaemi-alyktanir-um-hlutfoll-tveggja-ya">7.2.1.3. Sýnidæmi: Ályktanir um hlutföll tveggja þýða</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli06_final.html#alyktanir-um-hlutfoll-fleiri-ya">7.3. Ályktanir um hlutföll fleiri þýða</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id2">7.3.1. Ályktanir um hlutföll fleiri þýða</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#toflur-fyrir-ki-kvarat-prof">7.3.1.1. Töflur fyrir kí-kvaðrat próf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#ki-kvarat-prof-fyrir-hlutfoll">7.3.1.2. Kí-kvaðrat próf fyrir hlutföll</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#tafla-maeldrar-tini">7.3.1.3. Tafla mældrar tíðni</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#tafla-vaentanlegrar-tini">7.3.1.4. Tafla væntanlegrar tíðni</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#tafla-profstaerar">7.3.1.5. Tafla prófstærðar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#synidaemi-ki-kvarat-prof-2x2-tafla">7.3.1.6. Sýnidæmi: Kí-kvaðrat próf - 2x2 tafla</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#synidaemi-ki-kvarat-prof-2x3-tafla">7.3.1.7. Sýnidæmi: Kí-kvaðrat próf - 2x3 tafla</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#matgaeaprof">7.3.2. Mátgæðapróf</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli06_final.html#tengslatoflur">7.4. Tengslatöflur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id3">7.4.1. Tengslatöflur</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#tengslatoflur-contingency-tables">7.4.1.1. Tengslatöflur (contingency tables)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli06_final.html#synidaemi-tengslatoflur">7.4.1.2. Sýnidæmi: Tengslatöflur</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli06_final.html#daemi">7.5. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id4">7.5.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id5">7.5.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id6">7.5.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id7">7.5.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id8">7.5.5. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id9">7.5.6. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id10">7.5.7. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id11">7.5.8. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli06_final.html#id12">7.5.9. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli07_final.html">8. Ályktanir um talnabreytur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli07_final.html#alyktanir-um-dreifni">8.1. Ályktanir um dreifni</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#alyktanir-um-dreifni-i-einu-yi">8.1.1. Ályktanir um dreifni í einu þýði</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#oryggisbil-fyrir-dreifni-normaldreifs-yis">8.1.1.1. Öryggisbil fyrir dreifni normaldreifðs þýðis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#tilgatuprof-fyrir-dreifni-normaldreifs-yis">8.1.1.2. Tilgátupróf fyrir dreifni normaldreifðs þýðis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-alyktanir-um-dreifni-yis">8.1.1.3. Sýnidæmi: Ályktanir um dreifni þýðis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#alyktanir-um-dreifni-tveggja-ya">8.1.2. Ályktanir um dreifni tveggja þýða</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#tilgatuprof-fyrir-dreifni-tveggja-normaldreifra-ya">8.1.2.1. Tilgátupróf fyrir dreifni tveggja normaldreifðra þýða</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-alyktanir-um-dreifni-tveggja-normaldreifra-ya">8.1.2.2. Sýnidæmi: Ályktanir um dreifni tveggja normaldreifðra þýða</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli07_final.html#alyktanir-um-mealtol">8.2. Ályktanir um meðaltöl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#alyktanir-um-mealtal-yis">8.2.1. Ályktanir um meðaltal þýðis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#z-prof-og-oryggisbil">8.2.1.1. Z-próf og öryggisbil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#z-oryggisbil-fyrir-mu">8.2.1.2. Z - öryggisbil fyrir <span class="math">\(\mu\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#z-prof-fyrir-mu">8.2.1.3. Z-próf fyrir <span class="math">\(\mu\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-alyktanir-um-mealtal">8.2.1.4. Sýnidæmi: Ályktanir um meðaltal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-alyktanir-um-mu">8.2.1.5. Sýnidæmi: Ályktanir um <span class="math">\(\mu\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-prof-og-oryggisbil">8.2.1.6. T-próf og öryggisbil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-oryggisbil-fyrir-mu">8.2.1.7. T-öryggisbil fyrir <span class="math">\(\mu\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-prof-fyrir-mu">8.2.1.8. T-próf fyrir <span class="math">\(\mu\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-alyktanir-fyrir-mu">8.2.1.9. Sýnidæmi: Ályktanir fyrir <span class="math">\(\mu\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#alyktanir-um-mealtol-tveggja-ohara-ya">8.2.2. Ályktanir um meðaltöl tveggja óháðra þýða</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#id1">8.2.2.1. Z-próf og öryggisbil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#z-oryggisbil-fyrir-mismun-tveggja-mealtala">8.2.2.2. Z-öryggisbil fyrir mismun tveggja meðaltala</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#z-prof-fyrir-mismun-tveggja-mealtala">8.2.2.3. Z-próf fyrir mismun tveggja meðaltala</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-mu-1-mu-2">8.2.2.4. Sýnidæmi: <span class="math">\(\mu_1 - \mu_2\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#id2">8.2.2.5. T-próf og öryggisbil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-oryggisbil-fyrir-mismun-mealtala-tveggja-ya-gert-er-ra-fyrir-a-dreifnin-se-su-sama">8.2.2.6. T-öryggisbil fyrir mismun meðaltala tveggja þýða - gert er ráð fyrir að dreifnin sé sú sama</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-prof-fyrir-mismun-mealtala-tveggja-ya-gert-er-ra-fyrir-a-dreifnin-se-su-sama">8.2.2.7. T-próf fyrir mismun meðaltala tveggja þýða - gert er ráð fyrir að dreifnin sé sú sama</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-oryggisbil-fyrir-mismun-mealtala-tveggja-ya-olik-dreifni">8.2.2.8. T-öryggisbil fyrir mismun meðaltala tveggja þýða - ólík dreifni</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-prof-fyrir-mismun-mealtala-tveggja-ya-olik-dreifni">8.2.2.9. T-próf fyrir mismun meðaltala tveggja þýða - ólík dreifni</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-alyktanir-um-tvo-mealtol">8.2.2.10. Sýnidæmi: Ályktanir um tvö meðaltöl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#id3">8.2.2.11. Sýnidæmi: Ályktanir um tvö meðaltöl</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#tilgatuprof-fyrir-paraar-maelingar">8.2.3. Tilgátupróf fyrir paraðar mælingar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#t-prof-fyrir-paraar-maelingar">8.2.3.1. T-pŕof fyrir paraðar mælingar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli07_final.html#synidaemi-alyktanir-um-paraar-maelingar">8.2.3.2. Sýnidæmi: Ályktanir um paraðar mælingar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#hvenaer-notum-vi-hvaa-prof">8.2.4. Hvenær notum við hvaða próf?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli07_final.html#daemi">8.3. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id4">8.3.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id5">8.3.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id6">8.3.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id7">8.3.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id8">8.3.5. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id9">8.3.6. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id10">8.3.7. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id11">8.3.8. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id12">8.3.9. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id13">8.3.10. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id14">8.3.11. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id15">8.3.12. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id16">8.3.13. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id17">8.3.14. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id18">8.3.15. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id19">8.3.16. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id20">8.3.17. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id21">8.3.18. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id22">8.3.19. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli07_final.html#id23">8.3.20. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli08_final.html">9. Fervikagreining</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli08_final.html#einatta-fervikagreining">9.1. Einþátta fervikagreining</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli08_final.html#fervikasummur">9.1.1. Fervikasummur</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli08_final.html#rithattur-notaur-i-fervikagreiningu">9.1.1.1. Ritháttur notaður í fervikagreiningu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli08_final.html#fervikasummur-i-einhlia-fervikagreiningu-sums-of-squares-in-one-sided-anova">9.1.1.2. Fervikasummur í einhliða fervikagreiningu (Sums of squares in one-sided ANOVA)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kafli08_final.html#tilgatuprof-i-fervikagreiningu">9.1.2. Tilgátupróf í fervikagreiningu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli08_final.html#tilgatuprof-fyrir-einhlia-fervikagreiningu">9.1.2.1. Tilgátupróf fyrir einhliða fervikagreiningu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli08_final.html#synidaemi-fervikagreining">9.1.2.2. Sýnidæmi: Fervikagreining</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli08_final.html#daemi">9.2. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli08_final.html#id1">9.2.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli08_final.html#id2">9.2.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli08_final.html#id3">9.2.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kafli08_final.html#id4">9.2.4. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Aðhvarfsgreining</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#einfalt-linulegt-ahvarf">10.1. Einfalt línulegt aðhvarf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.1.1. Einfalt línulegt aðhvarf</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ahvarfsgreiningarlikani-simple-linear-regression-model">10.1.1.1. Aðhvarfsgreiningarlíkanið (simple linear regression model)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#afer-minnstu-kvarata">10.1.2. Aðferð minnstu kvaðrata</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#jafna-ahvarfslinu-minnstu-kvarata-least-squares-equation">10.1.2.1. Jafna aðhvarfslínu minnstu kvaðrata (least squares equation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synidaemi-einfalt-linulegt-ahvarf">10.1.2.2. Sýnidæmi: Einfalt línulegt aðhvarf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#leifar">10.1.3. Leifar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#leifar-residuals">10.1.3.1. Leifar (residuals)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bruun-og-bryggjun">10.1.4. Brúun og bryggjun</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bruun-interpolation">10.1.4.1. Brúun (interpolation)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synidaemi-bruun">10.1.4.2. Sýnidæmi: Brúun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bryggjun-extrapolation">10.1.4.3. Bryggjun (extrapolation)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#skyringarhlutfall">10.1.5. Skýringarhlutfall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#r-2-i-ahvarfsgreiningu">10.1.5.1. <span class="math">\(r^2\)</span> í aðhvarfsgreiningu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synidaemi-skyringarhlutfall">10.1.5.2. Sýnidæmi: Skýringarhlutfall</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utlagar-og-ahrifamikil-maeligildi">10.1.6. Útlagar og áhrifamikil mæligildi</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#alyktanir-i-ahvarfsgreiningu">10.2. Ályktanir í aðhvarfsgreiningu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#slembistaerin-varepsilon">10.2.1. Slembistærðin <span class="math">\(\varepsilon\)</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mat-a-sigma-2-i-einfoldu-linulegu-ahvarfi-estimate-of-sigma-2-in-simple-linear-regression">10.2.1.1. Mat á <span class="math">\(\sigma^2\)</span> í einföldu línulegu aðhvarfi (estimate of <span class="math">\(\sigma^2\)</span> in simple linear regression)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#oryggisbil-fyrir-beta-0-og-beta-1">10.2.2. Öryggisbil fyrir <span class="math">\(\beta_0\)</span> og <span class="math">\(\beta_1\)</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oryggisbil-fyrir-beta-0-confidense-interval-for-beta-0">10.2.2.1. Öryggisbil fyrir <span class="math">\(\beta_0\)</span> (confidense interval for <span class="math">\(\beta_0\)</span>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oryggisbil-fyrir-beta-1-confidence-interval-for-beta-1">10.2.2.2. Öryggisbil fyrir <span class="math">\(\beta_1\)</span> (confidence interval for <span class="math">\(\beta_1\)</span>)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#spabil-fyrir-framtiarmaelingar">10.2.3. Spábil fyrir framtíðarmælingar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spabil-fyrir-framtiarmaelingar-prediction-interval-for-future-observations">10.2.3.1. Spábil fyrir framtíðarmælingar (prediction interval for future observations)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#prof-a-fylgnistuli-rho">10.2.4. Próf á fylgnistuðli (<span class="math">\(\rho\)</span>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tilgatuprof-fyrir-rho">10.2.4.1. Tilgátupróf fyrir <span class="math">\(\rho\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synidaemi-prof-a-fylgnistuli">10.2.4.2. Sýnidæmi: Próf á fylgnistuðli</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fervikagreining-i-ahvarfsgreiningu">10.3. Fervikagreining í aðhvarfsgreiningu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">10.3.1. Fervikagreining í aðhvarfsgreiningu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fervikasummur-i-einfoldu-linulegu-ahvarfi-sums-of-squares-in-a-simple-linear-regression-anova">10.3.1.1. Fervikasummur í einföldu línulegu aðhvarfi (sums of squares in a simple linear regression ANOVA)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#skyringarhlutfall-r-2">10.3.1.2. Skýringarhlutfall (<span class="math">\(R^2\)</span>)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tilgatuprof-i-fervikagreiningu-fyrir-ahvarfsgreiningu">10.3.2. Tilgátupróf í fervikagreiningu fyrir aðhvarfsgreiningu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tilgatuprof-fyrir-einhlia-fervikagreiningu">10.3.2.1. Tilgátupróf fyrir einhliða fervikagreiningu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#daemi">10.4. Dæmi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">10.4.1. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">10.4.2. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">10.4.3. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">10.4.4. Dæmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">10.4.5. Dæmi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kafli10_final.html">11. Tvíkosta aðhvarfsgreining</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kafli10_final.html#tvikosta-ahvarfsgreiningarlikani">11.1. Tvíkosta aðhvarfsgreiningarlíkanið</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli10_final.html#id1">11.1.1. Tvíkosta aðhvarfsgreiningarlíkanið</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#tengifall-link-function">11.1.1.1. Tengifall (link function)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#tvikosta-ahvarfsgreiningarlikani-logistic-regression-model">11.1.1.2. Tvíkosta aðhvarfsgreiningarlíkanið (logistic regression model)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli10_final.html#tvikosta-ahvarfsgreining-me-samfelldri-skyribreytu">11.2. Tvíkosta aðhvarfsgreining með samfelldri skýribreytu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli10_final.html#id2">11.2.1. Tvíkosta aðhvarfsgreining með samfelldri skýribreytu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#tvikosta-ahvarf-me-samfelldri-skyribreytu-logistic-regression-with-a-continuous-explanatory-variable">11.2.1.1. Tvíkosta aðhvarf með samfelldri skýribreytu (logistic regression with a continuous explanatory variable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#synidaemi-tvikosta-ahvarfsgreining-me-samfelldri-skyribreytu">11.2.1.2. Sýnidæmi: Tvíkosta aðhvarfsgreining með samfelldri skýribreytu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli10_final.html#tvikosta-ahvarfsgreining-me-strjalli-skyribreytu">11.3. Tvíkosta aðhvarfsgreining með strjálli skýribreytu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli10_final.html#id3">11.3.1. Tvíkosta aðhvarfsgreining með strjálli skýribreytu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#tvikosta-ahvarf-me-strjalli-skyribreytu-logistic-regression-with-a-discrete-explanatory-variable">11.3.1.1. Tvíkosta aðhvarf með strjálli skýribreytu (logistic regression with a discrete explanatory variable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#synidaemi-tvikosta-ahvarfsgreining-me-strjalli-skyribreytu">11.3.1.2. Sýnidæmi: Tvíkosta aðhvarfsgreining með strjálli skýribreytu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kafli10_final.html#likur-i-tvikosta-ahvarfsgreiningu">11.4. Líkur í tvíkosta aðhvarfsgreiningu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kafli10_final.html#id4">11.4.1. Líkur í tvíkosta aðhvarfsgreiningu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#tvikosta-ahvarf-og-likur-logistic-regression-and-probability">11.4.1.1. Tvíkosta aðhvarf og líkur (logistic regression and probability)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#synidaemi-likur-i-tvikosta-ahvarfsgreiningu-me-samfelldri-skyribreytu">11.4.1.2. Sýnidæmi: Líkur í tvíkosta aðhvarfsgreiningu með samfelldri skýribreytu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kafli10_final.html#synidaemi-likur-i-tvikosta-ahvarfsgreiningu-me-strjalli-skyribreytu">11.4.1.3. Sýnidæmi: Líkur í tvíkosta aðhvarfsgreiningu með strjálli skýribreytu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="toflur_all_final.html">Töflur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toflur_all_final.html#t-1-stolu-normaldreifing-z-gildi">T.1: Stöðluð normaldreifing - z-gildi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toflur_all_final.html#t-2-t-dreifing">T.2: t-dreifing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toflur_all_final.html#t-3-chi-2-dreifing">T.3: <span class="math">\(\chi^2\)</span>-dreifing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toflur_all_final.html#t-4-f-dreifing-a-0-90">T.4: F-dreifing - <span class="math">\(a=0.90\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="toflur_all_final.html#t-5-f-dreifing-a-0-95">T.5: F-dreifing - <span class="math">\(a=0.95\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="toflur_all_final.html#t-6-f-dreifing-a-0-975">T.6: F-dreifing - <span class="math">\(a=0.975\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="toflur_all_final.html#t-7-f-dreifing-a-0-99">T.7: F-dreifing - <span class="math">\(a=0.99\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="svor_final.html">Svör við dæmum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#kafli">2. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id1">3. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id2">4. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id3">5. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id4">6. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id5">7. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id6">8. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id7">9. kafli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="svor_final.html#id8">10. kafli</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ordalistar.html">Orðalistar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ordalistar.html#islenskur-enskur-oralisti">Íslenskur-Enskur orðalisti</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ordalistar.html#enskur-islenskur-oralisti">Enskur-íslenskur orðalisti</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="um_hofunda.html">Um höfunda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="um_hofunda.html#anna-helga-jonsdottir">Anna Helga Jónsdóttir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="um_hofunda.html#sigrun-helga-lund">Sigrún Helga Lund</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="thakkir.html">Þakkir</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Tölfræði frá grunni</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li><span class="section-number">10. </span>Aðhvarfsgreining</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/kafli09_final.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ahvarfsgreining">
+<span id="c-adhvarfsgreining"></span><h1><span class="section-number">10. </span>Aðhvarfsgreining<a class="headerlink" href="#ahvarfsgreining" title="Varanlegur hlekkur á titilinn">¶</a></h1>
+<p>Umfjöllunarefni þessa kafla er <em>aðhvarfsgreining</em> (e. regression).
+Aðhvarfsgreining er gífurlega almenn aðferð sem er notuð til að kanna
+samband <em>háðrar breytu</em> (e. dependent variable) og einnar eða fleiri
+<em>óháðra breyta</em> (e. independent variables). Sé óháða breytan aðeins ein er
+talað um <em>einfalt línulegt aðhvarf</em> (e. simple linear regression) en séu
+þær fleiri er talað um <em>fjölþætt línulegt aðhvarf</em> (e. multiple linear
+regression). Við munum einungis fjalla um einfalt línulegt aðhvarf í
+þessari bók.</p>
+<p>Með einföldu línulegu aðhvarfi viljum við finna jöfnu þeirra línu (sjá
+kassa <a class="reference internal" href="kafli03_final.html#em-jafnabeinnarlinu"><span class="std std-numref">4.4.1.1</span></a> í kafla <a class="reference internal" href="kafli03_final.html#c-lysanditolfraedi"><span class="std std-numref">4</span></a>) sem
+lýsir best sambandi tveggja breyta og metur hversu gott það mat er.
+Stundum má áætla að orsakasamband sé á milli breytanna tveggja og þá er
+svarbreytan alltaf háða breytan en skýribreytan sú óháða (sjá kassa
+<a class="reference internal" href="kafli01_final.html#em-svarbreyturogskyribreytur"><span class="std std-numref">2.2.1.8</span></a> í kafla <a class="reference internal" href="kafli01_final.html#s-breytur"><span class="std std-numref">2.2</span></a>). Það er
+umdeilt að nota línulega aðhvarfsgreiningu þegar ekki er orsakasamband
+milli breytanna og munum við því ekki taka dæmi um slíkt. Við munum gera
+ráð fyrir að það sé orsakasamband á milli breytanna og því getum við
+talað um háðu breytuna sem svarbreytu og þá óháðu sem skýribreytu.</p>
+<p>Það gefur að skilja að það er lítið vit í að framkvæma línulegt aðhvarf
+nema sambandi breytanna sé yfir höfuð hægt að lýsa með beinni línu.
+Fyrsta skrefið í allri aðhvarfsgreiningu ætti því ætíð að vera að skoða
+<em>punktarit</em> af breytunum (kafli <a class="reference internal" href="kafli02_final.html#s-punktarit"><span class="std std-numref">3.4</span></a>) til að kanna hvort
+svo sé. Ef okkur sýnast punktarnir þyrpast í kringum einhverja beina
+línu er sambandið línulegt. Ef við sjáum skýr merki um sveigjur í
+punktaritinu getur sambandið ekki verið línulegt.</p>
+<div class="section" id="einfalt-linulegt-ahvarf">
+<span id="s-einfaltadhvarf"></span><h2><span class="section-number">10.1. </span>Einfalt línulegt aðhvarf<a class="headerlink" href="#einfalt-linulegt-ahvarf" title="Varanlegur hlekkur á titilinn">¶</a></h2>
+<div class="section" id="id1">
+<h3><span class="section-number">10.1.1. </span>Einfalt línulegt aðhvarf<a class="headerlink" href="#id1" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Byrjum á því að rifja aftur upp dæmi <a class="reference internal" href="kafli02_final.html#ex-bjor"><span class="std std-numref">3.4.1.2</span></a> þar sem Þorgerður og
+Birna könnuðu samband bjórdrykku og áfengismagns í blóði. Markmið
+línulegrar aðhvarfsgreiningar væri að meta jöfnu línu sem lýsir sambandi
+bjórdrykku og áfengismagnsins í blóðinu sem og að meta hversu
+áreiðanlegt þetta samband sé.</p>
+<div class="figure align-center">
+<img alt="Mynd" src="_images/bjor1.svg" /></div>
+<p>Í einföldu línulegu aðhvarfi göngum við út frá því að skýribreytan sé
+<em>föst</em> (e. fixed), það er að segja að skýribreytan sé ekki slembin
+(e. random). Við getum líka orðað það sem svo að við trúum því að það sé
+engin óvissa í mælingum okkar á skýribreytunni. Svarbreytan er hins
+vegar slembin og dreifing hennar er háð <span class="math">\(x\)</span>. Við notum <span class="math">\(Y\)</span>
+til að tákna svarbreytuna og <span class="math">\(x\)</span> til að tákna skýribreytuna. Í
+dæminu um bjórdrykkjuna útleggst það svo að engin óvissa sé fólgin í því
+hversu marga bjóra hver og einn einstaklingur drakk, en hins vegar geti
+verið óvissa fólgin í því hversu mikið áfengismagn í blóði mælist í
+kjölfarið.</p>
+<p>Aðhvarfslína (e. regression line) er bein lína sem lýsir því hvernig
+svarbreytan <span class="math">\(Y\)</span> breytist þegar skýribreytan <span class="math">\(x\)</span> breytist.
+Aðhvarfslínan er oft notuð til að <em>spá</em> (e. predict) fyrir um það hvaða
+gildi <span class="math">\(Y\)</span> mun taka fyrir gefið gildi á <span class="math">\(x\)</span>. Þegar við notum
+aðhvarfslínuna til að spá fyrir um gildi á <span class="math">\(Y\)</span> þá táknum við
+spágildin með <span class="math">\(\hat{y}\)</span>, lesið <span class="math">\(y\)</span>-hattur. Í dæminu okkar
+spáir aðhvarfslínan fyrir um hve mikið áfengismagn mun mælast í blóði
+eftir að tiltekinn fjöldi bjóra hefur verið drukkinn.</p>
+<div class="section" id="ahvarfsgreiningarlikani-simple-linear-regression-model">
+<h4><span class="section-number">10.1.1.1. </span>Aðhvarfsgreiningarlíkanið (simple linear regression model)<a class="headerlink" href="#ahvarfsgreiningarlikani-simple-linear-regression-model" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p><em>Einfalda aðhvarfsgreiningarlíkanið</em> (e. simple linear regression model) má
+skrifa sem</p>
+<div class="math" id="equation-eq-adhvarfslikan">
+<span class="eqno">(10.1)<a class="headerlink" href="#equation-eq-adhvarfslikan" title="Permalink to this equation">¶</a></span>\[Y = \beta_0 + \beta_1 x + \varepsilon
+
+\]</div>
+<p>þar sem <span class="math">\(\beta_0\)</span> og <span class="math">\(\beta_1\)</span> eru óþekktir stikar og
+<span class="math">\(\varepsilon\)</span> er normaldreifð slembistærð með meðaltal 0.</p>
+</div>
+<hr class="docutils" />
+<p>Skoðum nú aftur jöfnu <a class="reference internal" href="#equation-eq-adhvarfslikan">10.1</a>. Við sjáum að
+<span class="math">\(\beta_0\)</span> er skurðpunktur línunnar við y-ásinn og <span class="math">\(\beta_1\)</span>
+er hallatala línunnar. Þetta eru hin sanna hallatala og skurðpunktur sem
+við ekki þekkjum og eru stikarnir oft kallaðir þýðishallatala og
+þýðisskurðpunktur. Við getum aftur á móti tekið úrtak og notað gögnin
+til að meta þá. Til að meta stikana <span class="math">\(\beta_0\)</span> og <span class="math">\(\beta_1\)</span>
+framkvæmum við því tilraun og söfnum saman gögnum fyrir <span class="math">\(Y\)</span> og
+<span class="math">\(x\)</span> og notum þau til að meta stikana.</p>
+<p>Skoðum nú aftur bjórdæmið. Þar var safnað saman gögnum um áfengismagn í
+blóði og fjölda drukkinna bjóra. Út frá þessum gögnum má meta stikana í
+aðhvarfslíkani sem lýsir sambandi áfengismagns í blóði og fjölda
+drukkinna bjóra. Á mynd <a class="reference internal" href="#g-beinarlinur"><span class="std std-numref">10.1</span></a> má sjá gögnin úr dæminu en
+á myndina er einnig búið að setja nokkrar línur sem hafa ólíka
+skurðpunkta og hallatölur.</p>
+<div class="figure align-center" id="id8">
+<span id="g-beinarlinur"></span><img alt="Margar línur en hvaða lína er best?" src="_images/linur.svg" /><p class="caption"><span class="caption-number">Mynd 10.1: </span><span class="caption-text">Margar línur en hvaða lína er best?</span><a class="headerlink" href="#id8" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+<p>Með því að skoða myndina er alls ekki augljóst hvaða línu er best að
+nota til að lýsa sambandi <span class="math">\(Y\)</span> og <span class="math">\(x\)</span>. Við þurfum því
+eitthvert viðmið til að ákveða hvaða lína er best. Það viðmið sem við
+notum er <em>aðferð minnstu kvaðrata</em>.</p>
+</div>
+</div>
+<div class="section" id="afer-minnstu-kvarata">
+<h3><span class="section-number">10.1.2. </span>Aðferð minnstu kvaðrata<a class="headerlink" href="#afer-minnstu-kvarata" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Aðferð minnstu kvaðrata er algengasta aðferðin til að meta stikana í
+aðhvarfsgreiningar líkaninu. Aðferðin finnur línunni stað þar sem summa
+lóðréttar fjarlægðar milli einstakra punkta og línunar í öðru veldi er
+lágmörkuð. Þessi fjarlægð er kölluð <em>leifar</em> (e. residuals) . Á mynd
+<a class="reference internal" href="#g-leifar"><span class="std std-numref">10.2</span></a> má aftur sjá gögnin frá dæmi <a class="reference internal" href="kafli02_final.html#ex-bjor"><span class="std std-numref">3.4.1.2</span></a> ásamt línu
+minnstu kvaðrata og leifunum sem merktar eru inn á myndina með örvum.</p>
+<div class="figure align-center" id="id9">
+<span id="g-leifar"></span><img alt="Aðferð minnstu kvaðrata" src="_images/leifar.svg" /><p class="caption"><span class="caption-number">Mynd 10.2: </span><span class="caption-text">Aðferð minnstu kvaðrata</span><a class="headerlink" href="#id9" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+<div class="section" id="jafna-ahvarfslinu-minnstu-kvarata-least-squares-equation">
+<h4><span class="section-number">10.1.2.1. </span>Jafna aðhvarfslínu minnstu kvaðrata (least squares equation)<a class="headerlink" href="#jafna-ahvarfslinu-minnstu-kvarata-least-squares-equation" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Gerum ráð fyrir að við höfum <span class="math">\(n\)</span> paraðar mælingar
+<span class="math">\((x_i,y_i)\)</span> þar sem gera má ráð fyrir að aðhvarf <span class="math">\(Y\)</span> á
+<span class="math">\(x\)</span> sé línulegt. Táknum meðaltal og staðalfrávik <span class="math">\(x\)</span>
+breytunnar með <span class="math">\(\bar{x}\)</span> og <span class="math">\(s_x\)</span> og <span class="math">\(y\)</span> breytunnar
+með <span class="math">\(\bar{y}\)</span> og <span class="math">\(s_y\)</span>. Fylgnina á milli <span class="math">\(x\)</span> og
+<span class="math">\(y\)</span> táknum við með <span class="math">\(r\)</span>. Notum <span class="math">\(b_0\)</span> til að tákna mat á
+<span class="math">\(\beta_0\)</span> og <span class="math">\(b_1\)</span> til að tákna mat á <span class="math">\(\beta_1\)</span>. Þá
+reiknum við <span class="math">\(b_0\)</span> og <span class="math">\(b_1\)</span> með</p>
+<div class="math" id="equation-eq-beta1">
+<span class="eqno">(10.2)<a class="headerlink" href="#equation-eq-beta1" title="Permalink to this equation">¶</a></span>\[b_1 = r \frac{s_y}{s_x}
+
+\]</div>
+<p>og</p>
+<div class="math" id="equation-eq-beta0">
+<span class="eqno">(10.3)<a class="headerlink" href="#equation-eq-beta0" title="Permalink to this equation">¶</a></span>\[b_0 = \bar{y} -  b_1 \bar{x}
+
+\]</div>
+<p>Við notum stikana <span class="math">\(b_0\)</span> og <span class="math">\(b_1\)</span> til að smíða jöfnuna</p>
+<div class="math" id="equation-eq-spay">
+<span class="eqno">(10.4)<a class="headerlink" href="#equation-eq-spay" title="Permalink to this equation">¶</a></span>\[\hat{y} =  b_0 +  b_1x
+
+\]</div>
+<p>sem við notum til að <em>spá</em> (e. predict) fyrir um hvert gildið á <span class="math">\(y\)</span>
+verður fyrir þekkt gildi á <span class="math">\(x\)</span>.</p>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="synidaemi-einfalt-linulegt-ahvarf">
+<span id="ex-bjorjafna"></span><h4><span class="section-number">10.1.2.2. </span>Sýnidæmi: Einfalt línulegt aðhvarf<a class="headerlink" href="#synidaemi-einfalt-linulegt-ahvarf" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Ábending</p>
+<p>Skoðum aftur gögnin úr dæmi <a class="reference internal" href="kafli02_final.html#ex-bjor"><span class="std std-numref">3.4.1.2</span></a>. Finnið jöfnu
+aðhvarfslínunnar með því að nota aðferð minnstu kvaðrata.</p>
+<p>Út frá gögnunum má reikna:</p>
+<div class="math">
+\[\bar{x} = 4.813, \; \; s_x = 2.198, \; \; \bar{y} = 0.074, \; \; s_y = 0.044, \; \;
+r = 0.894
+
+\]</div>
+<p>Þá getum við reiknað</p>
+<div class="math">
+\[b_1 = r\frac{s_y}{s_x} = 0.894 \cdot \frac{0.044}{2.198} = 0.018
+
+\]</div>
+<p>og</p>
+<div class="math">
+\[b_0 = \bar{y} -  \beta_1 \bar{x} = 0.074 - (0.018 \cdot 4.813) = - 0.013
+
+\]</div>
+<p>Jafna minnstu kvaðrata er þá</p>
+<div class="math">
+\[\hat{y} = -0.013 + 0.018x
+
+\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="leifar">
+<h3><span class="section-number">10.1.3. </span>Leifar<a class="headerlink" href="#leifar" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<div class="section" id="leifar-residuals">
+<h4><span class="section-number">10.1.3.1. </span>Leifar (residuals)<a class="headerlink" href="#leifar-residuals" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Lóðrétta fjarlægðin frá mælingunum okkar að aðhvarfslínunni köllum við
+<em>leifar</em> og táknum með <span class="math">\(e\)</span>. Stærð leifa má reikna með</p>
+<div class="math">
+\[e_i = y_i - \hat{y}_i
+
+\]</div>
+<p>Punktar ofan aðhvarfslínunnar hafa jákvæða leif en punktar neðan hennar
+neikvæða.</p>
+</div>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Athugasemd</p>
+<p>Ef punktur lendir ofan við aðhvarfslínuna er <span class="math">\(y\)</span> gildið stærra en
+aðhvarfslínan spáir fyrir um. Þá er leifin jákvæð. Ef punktur lendir
+neðan við aðhvarfslínuna er <span class="math">\(y\)</span> gildið minna en aðhvarfslínan
+spáir fyrir um. Þá er leifin neikvæð.</p>
+</div>
+<hr class="docutils" />
+<p>Leifar segja okkur hversu vel aðhvarfslínan lýsir gögnunum. Því skal
+alltaf skoða leifarnar að lokinni aðhvarfsgreiningu en til þess notum
+við <em>leifarit</em> (e. residual plot). Leifaritið sýnir leifarnar á y-ásnum og
+skýribreytuna á x-ásnum. Fleiri tegundir leifarita eru til en við látum
+þetta nægja hér. Vinstra megin á mynd <a class="reference internal" href="#g-leifarit"><span class="std std-numref">10.3</span></a> má sjá punktarit
+af gögnunum úr dæmi <a class="reference internal" href="kafli02_final.html#ex-bjor"><span class="std std-numref">3.4.1.2</span></a> ásamt aðhvarfslínunni. Hægra megin á
+myndinni má sjá leifarit fyrir sömu gögn. Takið eftir að x-ásinn er því
+sá sami og er á punktaritinu en y-ásinn ekki.</p>
+<div class="figure align-center" id="id10">
+<span id="g-leifarit"></span><img alt="Punktarit af gögnum og leifarit" src="_images/bjor2.svg" /><p class="caption"><span class="caption-number">Mynd 10.3: </span><span class="caption-text">Punktarit af gögnum og leifarit</span><a class="headerlink" href="#id10" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+<p>Dreifing leifanna á að vera tilviljunarkennd umhverfis 0. Enga reglu á
+að sjá í leifunum. Séu þessi skilyrði brotin skal ekki nota
+aðhvarfslíkanið til að lýsa gögnunum. Skoðum nú mynd <a class="reference internal" href="#g-leifarit2"><span class="std std-numref">10.4</span></a>
+þar sem sjá má fjögur leifarit.</p>
+<ol class="upperalpha simple">
+<li><p>Hér eru leifarnar dreifðar tilviljunarkennt kringum núll.
+Allt er eins og það á að vera.</p></li>
+<li><p>Hér eru leifarnar dreifðar tilviljunarkennt en ekki kringum núll.
+Ekki ásættanlegt.</p></li>
+<li><p>Hér fylgja leifarnar bogadregnu mynstri. Það bendir til þess að samband <span class="math">\(Y\)</span> og <span class="math">\(x\)</span> sé ekki línulegt.
+Ekki ásættanlegt.</p></li>
+<li><p>Leifarnar eru ekki dreifðar tilviljunarkennt. Dreifni leifanna virðist aukast með hærri gildum á <span class="math">\(x\)</span>.
+Ekki ásættanlegt.</p></li>
+</ol>
+<div class="figure align-center" id="id11">
+<span id="g-leifarit2"></span><img alt="Leifarit" src="_images/leifar2.svg" /><p class="caption"><span class="caption-number">Mynd 10.4: </span><span class="caption-text">Leifarit</span><a class="headerlink" href="#id11" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="bruun-og-bryggjun">
+<h3><span class="section-number">10.1.4. </span>Brúun og bryggjun<a class="headerlink" href="#bruun-og-bryggjun" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Við getum notað jöfnu aðhvarfslínunnar, jöfnu <a class="reference internal" href="#equation-eq-spay">10.4</a>, til að spá
+fyrir um hvaða gildi <span class="math">\(Y\)</span> mun taka fyrir ákveðið gildi á <span class="math">\(x\)</span>.
+Áður en það er gert skal skoða á hvaða bili <span class="math">\(x\)</span>-gildin sem við
+notuðum til að meta líkanið liggja. Það getur nefnilega verið mjög
+vafasamt að nota jöfnu aðhvarfslínunnar til að spá fyrir um gildi á
+<span class="math">\(Y\)</span> fyrir gildi á <span class="math">\(x\)</span> sem eru ekki á sama reki og
+<span class="math">\(x\)</span>-gildin sem notuð voru til að meta stikana í líkaninu.</p>
+<div class="section" id="bruun-interpolation">
+<h4><span class="section-number">10.1.4.1. </span>Brúun (interpolation)<a class="headerlink" href="#bruun-interpolation" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Sé aðhvarfslíkan notað til að spá fyrir um gildi á <span class="math">\(Y\)</span> fyrir
+eitthvert gildi á <span class="math">\(x\)</span> sem er á sama reki og <span class="math">\(x\)</span>-gildin sem
+notuð voru til að meta stikana í líkaninu er talað um að <em>brúa</em>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="synidaemi-bruun">
+<h4><span class="section-number">10.1.4.2. </span>Sýnidæmi: Brúun<a class="headerlink" href="#synidaemi-bruun" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Ábending</p>
+<p>Skoðum nú aftur gögnin úr dæmi <a class="reference internal" href="kafli02_final.html#ex-bjor"><span class="std std-numref">3.4.1.2</span></a>. Spáið fyrir um
+áfengismagn í blóði einstaklings sem drukkið hefur 6.5 bjóra.</p>
+<p>Við sáum í dæmi <a class="reference internal" href="#ex-bjorjafna"><span class="std std-numref">10.1.2.2</span></a> að jafna minnstu kvaðrata er</p>
+<div class="math">
+\[\hat{y} = -0.013 + 0.018x
+
+\]</div>
+<p>Enginn í rannsókninni drakk 6.5 bjóra en rannsóknin náði yfir
+einstaklinga sem drukkið höfðu frá einum og upp í níu bjóra. 6.5 liggur
+á því bili og því erum við að brúa þegar við notum aðhvarfslínuna til að
+spá fyrir um áfengismagnið. Við setjum 6.5 inn í stað <span class="math">\(x\)</span> í
+jöfnunni hér að ofan og fáum að</p>
+<div class="math">
+\[\hat{y} = -0.013 + (0.018 \cdot 6.5) = 0.104
+
+\]</div>
+<p>Við spáum því að manneskja sem drekki 6.5 bjóra mælist með alkohólmagn
+0.104.</p>
+<div class="figure align-center">
+<img alt="Mynd" src="_images/bruun.svg" /></div>
+</div>
+</div>
+<div class="section" id="bryggjun-extrapolation">
+<h4><span class="section-number">10.1.4.3. </span>Bryggjun (extrapolation)<a class="headerlink" href="#bryggjun-extrapolation" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Sé aðhvarfslíkan notað til að spá fyrir um gildi á <span class="math">\(Y\)</span> fyrir
+eitthvert gildi á <span class="math">\(x\)</span> sem er <strong>fjarri</strong> þeim <span class="math">\(x\)</span>-gildum sem
+notuð voru til að meta stikana í líkaninu er talað um að <em>bryggja</em>.
+Þetta svarar til að lengja aðhvarfslínuna. Það getur verið mjög vafasamt
+að bryggja!</p>
+</div>
+<hr class="docutils" />
+<p>Á mynd <a class="reference internal" href="#g-bryggjun"><span class="std std-numref">10.5</span></a> má sjá niðurstöður mælinga á hæð drengja á
+aldrinum 3-15 ára. Sjá má á myndinni að aðhvarfslínan lýsir vel sambandi
+hæðar og aldurs drengja á bilinu 3-15 ára og væri því hægt að nota
+líkanið til að spá fyrir um hæð drengja á þeim aldri. Hins vegar væri
+rangt að nota líkanið til að spá fyrir um hæð drengja á aldri sem ekki
+liggur á bilinu 3-15 ára. Sé myndin skoðuð má til dæmis sjá að líkanið
+okkar spáir því að 30 ára gamall maður sé tæplega 250 cm á hæð! Hér erum
+við að nota líkanið til að spá fyrir um <span class="math">\(Y\)</span>-gildi fyrir
+<span class="math">\(x\)</span>-gildi sem liggur fjarri upphaflegu <span class="math">\(x\)</span> gildanna. Því
+erum við að bryggja og það ber ávallt að varast!</p>
+<div class="figure align-center" id="id12">
+<span id="g-bryggjun"></span><img alt="Bryggjun" src="_images/bryggjun.svg" /><p class="caption"><span class="caption-number">Mynd 10.5: </span><span class="caption-text">Bryggjun</span><a class="headerlink" href="#id12" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="skyringarhlutfall">
+<h3><span class="section-number">10.1.5. </span>Skýringarhlutfall<a class="headerlink" href="#skyringarhlutfall" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Munið að fylgni segir okkur til um stefnu og styrkleika línulegs
+sambands tveggja breyta en ekki hvert sambandið milli breytanna er.
+Fylgnistuðull hefur hins vegar beina tengingu inn í línulega
+aðhvarfsgreiningu, því með honum má reikna <em>skýringarhlutfall</em> (e. R
+squared).</p>
+<div class="section" id="r-2-i-ahvarfsgreiningu">
+<span id="em-skyringarhlutfall"></span><h4><span class="section-number">10.1.5.1. </span><span class="math">\(r^2\)</span> í aðhvarfsgreiningu<a class="headerlink" href="#r-2-i-ahvarfsgreiningu" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Sé fylgnistuðullinn settur í annað veldi, <span class="math">\(r^2\)</span>, er talað um
+skýringarhlutfall. <span class="math">\(r^2\)</span> stendur fyrir hlutfallslegan breytileika
+í <span class="math">\(Y\)</span> sem er hægt að skýra út með breytingum á <span class="math">\(x\)</span>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="synidaemi-skyringarhlutfall">
+<h4><span class="section-number">10.1.5.2. </span>Sýnidæmi: Skýringarhlutfall<a class="headerlink" href="#synidaemi-skyringarhlutfall" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Ábending</p>
+<p>Skoðum aftur dæmi <a class="reference internal" href="#ex-bjorjafna"><span class="std std-numref">10.1.2.2</span></a>. Hversu mikið af breytileika í
+áfengismagni má skýra út með fjölda drukkinna bjóra?</p>
+<p>Við sáum áður að í tilrauninni var fylgnistuðullinn <span class="math">\(r\)</span> = 0.894.
+Því fáum við að <span class="math">\(r^2 = 0.894^2 = 0.799.\)</span> Því má segja að um 80% af
+breytileika í alkóhólmagni megi skýra með fjölda drukkinna bjóra.</p>
+</div>
+</div>
+</div>
+<div class="section" id="utlagar-og-ahrifamikil-maeligildi">
+<h3><span class="section-number">10.1.6. </span>Útlagar og áhrifamikil mæligildi<a class="headerlink" href="#utlagar-og-ahrifamikil-maeligildi" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Útlagi (kassi <a class="reference internal" href="kafli02_final.html#em-utlagar"><span class="std std-numref">3.2.2.2</span></a>) er mæligildi sem er ólíkt öðrum
+mæligildum í safninu. Mæligildi þar sem <span class="math">\(y\)</span> gildið er frábrugðið
+hinum <span class="math">\(y\)</span> gildunum hefur háa leif. Aðrir útlagar eru ekki endilega
+með háa leif . Á mynd <a class="reference internal" href="#g-utlagarogleifar"><span class="std std-numref">10.6</span></a> má sjá tvo útlaga.
+Útlaginn á myndinni til vinstri er með háa leif en útlaginn hægra megin
+ekki.</p>
+<div class="figure align-center" id="id13">
+<span id="g-utlagarogleifar"></span><img alt="Útlagar og leifar þeirra" src="_images/utlagarleif.svg" /><p class="caption"><span class="caption-number">Mynd 10.6: </span><span class="caption-text">Útlagar og leifar þeirra</span><a class="headerlink" href="#id13" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+<p>Mæligildi er sagt <em>áhrifaríkt</em> (e. influential) ef útkoma útreikninga
+breytist mikið við það að fjarlægja það úr gagnasafninu. Mæligildi þar
+sem <span class="math">\(x\)</span> gildið er frábrugðið hinum <span class="math">\(x\)</span> gildunum (og er þar
+af leiðandi útlagi) er oft áhrifaríkt.</p>
+<p>Skoðum nú mynd <a class="reference internal" href="#g-ahrifamikil"><span class="std std-numref">10.7</span></a>. Á myndinni vinstra megin má sjá
+útlaga. Gráa brotalínan er aðhvarfslínan sem fæst þegar allar
+mælingarnar eru notaðar til að meta hana en svarta heila línan fæst ef
+útlaganum er sleppt. Það sést að ekki er mikill munur á línunum og því
+er útlaginn ekki áhrifamikill. Skoðum við aftur á móti myndina hægra
+megin sést að mikill munur er á línunum og því er útlaginn þeim megin
+áhrifamikill.</p>
+<div class="figure align-center" id="id14">
+<span id="g-ahrifamikil"></span><img alt="Áhrifamikil mæligildi" src="_images/ahrifamikil.svg" /><p class="caption"><span class="caption-number">Mynd 10.7: </span><span class="caption-text">Áhrifamikil mæligildi</span><a class="headerlink" href="#id14" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+<p>Það er ekki alltaf augljóst hvað gera á við útlaga og áhrifamikil
+mæligildi. Ágætt er að hafa eftirfarandi í huga þegar áhrifamikil
+mæligildi og/eða útlagar leynast í gagnasafni:</p>
+<ol class="arabic simple">
+<li><p>Það á alltaf að skoða útlaga og áhrifamikil mæligildi sérstaklega.</p></li>
+<li><p>Ef mistök hafa átt sér stað skal fjarlæga mæligildið úr safninu.</p></li>
+<li><p>Ef ekki er hægt að sýna fram á að um mistök hafi verið að ræða er oft
+gott að sýna útreikninga með og án þessara gilda.</p></li>
+<li><p>Í sumum tilfellum er eðlilegast að byggja útreikninga á mælisafninu
+án útlaga/áhrifamikilla mæligilda en í þeim tilfellum verður að taka
+fram að líkanið gildi ekki fyrir mæligildi utan þess ramma mæligilda
+sem notuð voru við gerð líkansins.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="alyktanir-i-ahvarfsgreiningu">
+<h2><span class="section-number">10.2. </span>Ályktanir í aðhvarfsgreiningu<a class="headerlink" href="#alyktanir-i-ahvarfsgreiningu" title="Varanlegur hlekkur á titilinn">¶</a></h2>
+<p>Nú er kominn tími til að setja aðhvarfsgreiningu í samhengi við það sem
+við höfum áður lært um ályktunartölfræði. Mælingarnar okkar eru
+einhverri slembni háðar og því getum við fengið aðrar niðurstöður ef við
+endurtökum tilraunina og þar af leiðandi annað mat á aðhvarfslínunni
+okkar. Því er eðlilegt að reikna öryggisbil og tilgátupróf í einföldu
+línulegu aðhvarfi líkt og þið hafið séð svo mörg dæmi um hingað til.</p>
+<p>Til að kanna hvaða tilgátupróf og öryggisbil eru viðeigandi skulum við
+skoða aftur aðhvarfsgreiningarlíkanið frá jöfnu <a class="reference internal" href="#equation-eq-adhvarfslikan">10.1</a>.
+Ef við gerum ráð fyrir að við höfum <span class="math">\(n\)</span> paraðar mælingar
+<span class="math">\((x_1,y_1), \ldots, (x_n,y_n)\)</span>, má skrifa líkanið sem</p>
+<div class="math">
+\[Y_i = \beta_0 + \beta_1 x_i + \varepsilon_i
+
+\]</div>
+<p>Í þessari jöfnu er <span class="math">\(\beta_0\)</span> hinn sanni skurðpunktur sem við ekki
+þekkjum, þýðisskurðpunkturinn, og <span class="math">\(\beta_1\)</span> hin sanna hallatala,
+þýðishallatalan. <span class="math">\(\beta_0\)</span> og <span class="math">\(\beta_1\)</span> eru því lýsistærðir
+sem við viljum bæði meta og draga ályktanir um. Við sáum hér að framan
+að hægt er að meta <span class="math">\(\beta_0\)</span> og <span class="math">\(\beta_1\)</span> með því að safna
+saman gögnum og nota aðferð minnstu kvaðrata. Við köllum mötin
+<span class="math">\(b_0\)</span> og <span class="math">\(b_1\)</span> (jöfnur <a class="reference internal" href="#equation-eq-beta0">10.3</a> og <a class="reference internal" href="#equation-eq-beta1">10.2</a>).
+Síðar í þessum kafla munum við sjá fjölmörg öryggisbil og tilgátupróf
+sem varða þessa stika. Við eigum hins vegar enn eftir að skoða eina
+breytu í jöfnunni nánar en það eru stærðinar <span class="math">\(\varepsilon_i\)</span>.</p>
+<div class="section" id="slembistaerin-varepsilon">
+<h3><span class="section-number">10.2.1. </span>Slembistærðin <span class="math">\(\varepsilon\)</span><a class="headerlink" href="#slembistaerin-varepsilon" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Við notum slembistærðina <span class="math">\(\varepsilon\)</span> til að lýsa þeirri óvissu
+sem er til staðar í mælingum okkar á <span class="math">\(Y\)</span>. Við gerum ráð fyrir að
+<span class="math">\(\varepsilon_i\)</span> séu einsdreifðar óháðar slembistærðir sem fylgja
+normaldreifingu með meðaltal 0 og dreifni <span class="math">\(\sigma^2\)</span>. Við
+krefjumst þess að <span class="math">\(\varepsilon_i\)</span> séu óháðar og einsdreifðar, til
+að tryggja að það sé engin kerfisbundin óvissa í mælingunum okkar og við
+krefjumst þess að meðaltal þeirra sé 0, því annars værum við markvisst
+að van- eða ofmeta aðhvarfslínuna.</p>
+<p>Líkt og með allar slembistærðir, gefur gildi stika líkindadreifingar
+<span class="math">\(\varepsilon\)</span> allar þær upplýsingar sem hægt er að fá um
+slembistærðina. Munið að normaldreifingin hefur stikana <span class="math">\(\mu\)</span> og
+<span class="math">\(\sigma^2\)</span>. Í þessu tilviki vitum við að <span class="math">\(\mu = 0\)</span> en við
+vitum ekki hvert gildi <span class="math">\(\sigma^2\)</span> er. Mat á <span class="math">\(\sigma^2\)</span> fæst
+með því að finna kvaðratsummu leifanna og deila í hana með
+(<span class="math">\(n-2\)</span>).</p>
+<div class="section" id="mat-a-sigma-2-i-einfoldu-linulegu-ahvarfi-estimate-of-sigma-2-in-simple-linear-regression">
+<h4><span class="section-number">10.2.1.1. </span>Mat á <span class="math">\(\sigma^2\)</span> í einföldu línulegu aðhvarfi (estimate of <span class="math">\(\sigma^2\)</span> in simple linear regression)<a class="headerlink" href="#mat-a-sigma-2-i-einfoldu-linulegu-ahvarfi-estimate-of-sigma-2-in-simple-linear-regression" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Mat á <span class="math">\(\sigma^2\)</span> í einföldu línulegu aðhvarfi táknum við með
+<span class="math">\(s_e^2\)</span> og reiknum með</p>
+<div class="math" id="equation-eq-sigmaest">
+<span class="eqno">(10.5)<a class="headerlink" href="#equation-eq-sigmaest" title="Permalink to this equation">¶</a></span>\[s_e^2 = \frac{\sum_{i=1}^n (y_i-\hat{y}_i)^2}{n-2}
+
+\]</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="oryggisbil-fyrir-beta-0-og-beta-1">
+<h3><span class="section-number">10.2.2. </span>Öryggisbil fyrir <span class="math">\(\beta_0\)</span> og <span class="math">\(\beta_1\)</span><a class="headerlink" href="#oryggisbil-fyrir-beta-0-og-beta-1" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Þar sem mælingarnar okkar eru slembni háðar, geta allar ályktanir
+dregnar út frá þeim breyst í hvert sinn sem tilraunin er endurtekin.
+Markmið okkar í aðhvarfsgreiningu er að meta stikana <span class="math">\(\beta_0\)</span> og
+<span class="math">\(\beta_1\)</span> í aðhvarfslínunni og því er eðlilegast að skoða hversu
+nákvæm þau möt eru. Besta leiðin til þess er að skoða öryggisbil fyrir
+stikana.</p>
+<div class="section" id="oryggisbil-fyrir-beta-0-confidense-interval-for-beta-0">
+<h4><span class="section-number">10.2.2.1. </span>Öryggisbil fyrir <span class="math">\(\beta_0\)</span> (confidense interval for <span class="math">\(\beta_0\)</span>)<a class="headerlink" href="#oryggisbil-fyrir-beta-0-confidense-interval-for-beta-0" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Neðra mark <span class="math">\(1 - \alpha\)</span> öryggisbils fyrir <span class="math">\(\beta_0\)</span> er:</p>
+<div class="math">
+\[b_0 - t_{1-\alpha/2,(n-2)} \cdot s_e \sqrt{\frac{1}{n} + \frac{(\bar{x})^2}{s_x^2\cdot(n-1)}}
+
+\]</div>
+<p>Efra mark <span class="math">\(1 - \alpha\)</span> öryggisbils er:</p>
+<div class="math">
+\[b_0 + t_{1-\alpha/2,(n-2)} \cdot s_e \sqrt{\frac{1}{n} + \frac{(\bar{x})^2}{s_x^2\cdot(n-1)}}
+
+\]</div>
+<p>Öryggisbilið má því skrifa:</p>
+<div class="math">
+\[b_0 - t_{1-\alpha/2,(n-2)} \cdot s_e \sqrt{\frac{1}{n} + \frac{(\bar{x})^2}{s_x^2\cdot(n-1)}}
+< \beta_0  <
+b_0 + t_{1-\alpha/2,(n-2)} \cdot s_e \sqrt{\frac{1}{n} + \frac{(\bar{x})^2}{s_x^2\cdot(n-1)}}
+
+\]</div>
+<p>þar sem <span class="math">\(b_0\)</span> má reikna með jöfnu <a class="reference internal" href="#equation-eq-beta0">10.3</a>, <span class="math">\(n\)</span> er
+fjöldi paraðra mælinga, <span class="math">\(\bar{x}\)</span> er meðaltal skýribreytunnar,
+<span class="math">\(s_x\)</span> er staðalfrávik skýribreytunnar og
+<span class="math">\(t_{1-\alpha/2,(n-2)}\)</span> má finna í t-töflu í kafla <a class="reference internal" href="toflur_all_final.html#a-ttafla"><span class="std std-ref">T.2</span></a>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="oryggisbil-fyrir-beta-1-confidence-interval-for-beta-1">
+<h4><span class="section-number">10.2.2.2. </span>Öryggisbil fyrir <span class="math">\(\beta_1\)</span> (confidence interval for <span class="math">\(\beta_1\)</span>)<a class="headerlink" href="#oryggisbil-fyrir-beta-1-confidence-interval-for-beta-1" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Neðra mark <span class="math">\(1 - \alpha\)</span> öryggisbils fyrir <span class="math">\(\beta_1\)</span> er:</p>
+<div class="math">
+\[b_1 - t_{1-\alpha/2,(n-2)} \cdot s_e \frac{1}{\sqrt{s_x^2 \cdot (n-1)}}
+
+\]</div>
+<p>Efra mark <span class="math">\(1 - \alpha\)</span> öryggisbils er:</p>
+<div class="math">
+\[b_1 + t_{1-\alpha/2,(n-2)} \cdot s_e \frac{1}{\sqrt{s_x^2 \cdot (n-1)}}
+
+\]</div>
+<p>Öryggisbilið má því skrifa:</p>
+<div class="math">
+\[b_1 - t_{1-\alpha/2,(n-2)} \cdot s_e \frac{1}{\sqrt{s_x^2 \cdot (n-1)}}
+< \beta_1  <
+b_1 + t_{1-\alpha/2,(n-2)} \cdot s_e \frac{1}{\sqrt{s_x^2 \cdot (n-1)}}
+
+\]</div>
+<p>þar sem <span class="math">\(b_1\)</span> má reikna með jöfnu <a class="reference internal" href="#equation-eq-beta1">10.2</a>, <span class="math">\(n\)</span> er
+fjöldi paraðra mælinga, <span class="math">\(s_x\)</span> er staðalfrávik skýribreytunnar og
+<span class="math">\(t_{1-\alpha/2,(n-2)}\)</span> má finna í t-töflu í kafla <a class="reference internal" href="toflur_all_final.html#a-ttafla"><span class="std std-ref">T.2</span></a>.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="spabil-fyrir-framtiarmaelingar">
+<h3><span class="section-number">10.2.3. </span>Spábil fyrir framtíðarmælingar<a class="headerlink" href="#spabil-fyrir-framtiarmaelingar" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Við höfum séð að við getum notað aðhvarfslíkanið til að spá fyrir um
+gildi á <span class="math">\(Y\)</span>. Þessi spá er slembni háð, bæði vegna slembni í
+<span class="math">\(Y\)</span> og óvissu í matinu okkar á stikunum. Hér að neðan má sjá
+hvernig reikna má spábil fyrir framtíðarmælingu á <span class="math">\(Y\)</span> (það er að
+segja mælingu sem ekki hefur verið framkvæmd) fyrir eitthvert gildi
+<span class="math">\(x = x_0\)</span>.</p>
+<div class="section" id="spabil-fyrir-framtiarmaelingar-prediction-interval-for-future-observations">
+<h4><span class="section-number">10.2.3.1. </span>Spábil fyrir framtíðarmælingar (prediction interval for future observations)<a class="headerlink" href="#spabil-fyrir-framtiarmaelingar-prediction-interval-for-future-observations" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Neðra mark <span class="math">\(1 - \alpha\)</span> spábils fyrir framtíðarmælingu á
+<span class="math">\(Y\)</span>:</p>
+<div class="math">
+\[(b_0 + b_1x_0) - t_{1-\alpha/2,(n-2)} \cdot s_e \sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{s_x^2(n-1)}}
+
+\]</div>
+<p>Efra mark <span class="math">\(1 - \alpha\)</span> spábils er:</p>
+<div class="math">
+\[(b_0 + b_1x_0) + t_{1-\alpha/2,(n-2)} \cdot s_e \sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{s_x^2(n-1)}}
+
+\]</div>
+<p>þar sem <span class="math">\(b_0\)</span> og <span class="math">\(b_1\)</span> má reikna með jöfnum <a class="reference internal" href="#equation-eq-beta0">10.3</a>
+og <a class="reference internal" href="#equation-eq-beta1">10.2</a>, <span class="math">\(n\)</span> er fjöldi paraðra mælinga, <span class="math">\(\bar{x}\)</span>
+er meðaltal skýribreytunnar, <span class="math">\(s_x\)</span> er staðalfrávik skýribreytunnar
+og <span class="math">\(t_{1-\alpha/2,(n-2)}\)</span> má finna í t-töflu í kafla <a class="reference internal" href="toflur_all_final.html#a-ttafla"><span class="std std-ref">T.2</span></a>.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="prof-a-fylgnistuli-rho">
+<h3><span class="section-number">10.2.4. </span>Próf á fylgnistuðli (<span class="math">\(\rho\)</span>)<a class="headerlink" href="#prof-a-fylgnistuli-rho" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Við höfum nú séð að <span class="math">\(b_0\)</span> og <span class="math">\(b_1\)</span> eru möt á
+<span class="math">\(\beta_0\)</span> og <span class="math">\(\beta_1\)</span> sem við gátum reiknað út frá úrtakinu
+okkar. Að sama skapi lítum við svo á að fylgnistuðullinn <span class="math">\(r\)</span> sem
+við reiknum út (sjá kassa <a class="reference internal" href="kafli03_final.html#em-fylgnistudull"><span class="std std-numref">4.4.2.1</span></a>) sé eingöngu mat á
+sanna fylgnistuðli þýðisins. Við táknum sanna fylgnistuðulinn með
+<span class="math">\(\rho\)</span> sem er bókstafurinn r í gríska stafrófinu. Yfirleitt höfum
+við áhuga á því að sýna fram á að það sé fylgni á milli breytanna sem
+við erum að skoða. Það er við viljum geta fullyrt að fylgnin sé ekki 0.
+Því er núlltilgátan sú að <span class="math">\(\rho = 0\)</span>.</p>
+<div class="section" id="tilgatuprof-fyrir-rho">
+<h4><span class="section-number">10.2.4.1. </span>Tilgátupróf fyrir <span class="math">\(\rho\)</span><a class="headerlink" href="#tilgatuprof-fyrir-rho" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Núlltilgátan er:</p>
+<div class="math">
+\[H_0: \rho = 0
+
+\]</div>
+<p>Prófstærðin er:</p>
+<div class="math" id="equation-eq-rhoprof">
+<span class="eqno">(10.6)<a class="headerlink" href="#equation-eq-rhoprof" title="Permalink to this equation">¶</a></span>\[T = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}
+
+\]</div>
+<p>Ef núlltilgátan er sönn fylgir prófstærðin t dreifingu með n-2
+frígráður, eða <span class="math">\(T \sim t_{(n-2)}\)</span>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Gagntilgáta</p></th>
+<th class="head"><p>Hafna <span class="math">\(H_0\)</span> ef:</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math">\(H_1: \rho &lt; 0\)</span></p></td>
+<td><p><span class="math">\(T &lt; -t_{1-\alpha,(n-2)}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math">\(H_1: \rho &gt; 0\)</span></p></td>
+<td><p><span class="math">\(T &gt; t_{1-\alpha,(n-2)}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math">\(H_1: \rho \neq 0\)</span></p></td>
+<td><p><span class="math">\(T &lt; -t_{1-\alpha/2,(n-2)}\)</span> eða <span class="math">\(T &gt; t_{1-\alpha/2,(n-2)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="synidaemi-prof-a-fylgnistuli">
+<h4><span class="section-number">10.2.4.2. </span>Sýnidæmi: Próf á fylgnistuðli<a class="headerlink" href="#synidaemi-prof-a-fylgnistuli" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Ábending</p>
+<p>Atli elskar ís. Af einskærum áhuga gerði hann rannsókn þar sem hann
+kannaði fylgni veltu ísbúða á einum tilteknum degi við hitastigið úti
+þann dag. Alls skoðaði hann útkomur fyrir 38 daga sem hann valdi af
+handahófi yfir árið. Fylgnin milli hitastigs og seldra ísa reyndist vera
+0.5 fyrir þetta úrtak. Getur Atli fullyrt að það sé í raun fylgni milli
+hitastigs og ísáts? Notið <span class="math">\(\alpha = 0.05\)</span></p>
+<p>Förum eftir leiðbeiningunum um framkvæmd tilgátuprófa:</p>
+<ol class="arabic">
+<li><p>Við ætlum að álykta um fylgni tveggja breyta og notum því tilgátupróf
+fyrir <span class="math">\(\rho\)</span>.</p></li>
+<li><p>Notum <span class="math">\(\alpha = 0.05\)</span> eins og gefið er í textanum.</p></li>
+<li><p>Við ætlum að kanna hvort fylgnin sé önnur en núll.</p>
+<div class="math">
+\[\begin{aligned}
+H_0&:& \rho= 0\\
+H_1&:& \rho \neq 0 \end{aligned}
+
+\]</div>
+</li>
+<li><p>Prófstærðina reiknum við með jöfnu <a class="reference internal" href="#equation-eq-rhoprof">10.6</a>:</p>
+<div class="math">
+\[t = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}
+
+\]</div>
+<p>Við höfum að <span class="math">\(n=38\)</span> og <span class="math">\(r = 0.5\)</span>. Við setjum þessar tölur
+inn í jöfnurnar og fáum</p>
+<div class="math">
+\[\begin{aligned}
+t &= \frac{0.5\sqrt{38 -2}}{\sqrt{1-0.5^2}} = \frac{0.5\sqrt{36}}{\sqrt{1-0.25}}\\
+&= \frac{0.5\cdot 6}{\sqrt{0.75}} = \frac{3}{\sqrt{0.75}} = 3.46 \end{aligned}
+
+\]</div>
+</li>
+<li><p>Við þurfum að finna höfnunarsvæðið og notum til þess t-töflu. Við
+flettum upp eftir <span class="math">\(n - 2 = 36\)</span> frígráðum.
+<span class="math">\(t_{1-\alpha/2, (n-2)}\)</span> = <span class="math">\(t_{0.975, (36)}\)</span> = 2.028, svo
+við höfnum núlltilgátunni ef <span class="math">\(t &gt; 2.028\)</span> eða
+<span class="math">\(t &lt; -2.028\)</span>.</p>
+<p>Við sjáum að <span class="math">\(t = 3.46 &gt; 2.028\)</span> svo prófstærðin fellur á
+höfnunarsvæðið.</p>
+</li>
+<li><p>Við höfnum núlltilgátunni að fylgni milli hitastigs og ísáts sé núll
+og fullyrðum að það sé fylgni á milli ísáts og hitastigs úti.</p>
+<div class="figure align-center">
+<img alt="Mynd" src="_images/t36.svg" /></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fervikagreining-i-ahvarfsgreiningu">
+<h2><span class="section-number">10.3. </span>Fervikagreining í aðhvarfsgreiningu<a class="headerlink" href="#fervikagreining-i-ahvarfsgreiningu" title="Varanlegur hlekkur á titilinn">¶</a></h2>
+<div class="section" id="id2">
+<h3><span class="section-number">10.3.1. </span>Fervikagreining í aðhvarfsgreiningu<a class="headerlink" href="#id2" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Nota má fervikagreiningu til að draga ályktanir í línulegri
+aðhvarfgreiningu. Uppsetningin er á margan hátt svipuð og í kafla
+<a class="reference internal" href="kafli08_final.html#c-fervikagreining"><span class="std std-numref">9</span></a> þegar við notum fervikagreiningu til að draga
+ályktanir um meðaltöl, en fervikasummurnar eru reiknaðar á örlítið annan
+hátt. Fyrir sérhverja mælingu <span class="math">\(y_i\)</span> gildir að</p>
+<div class="math">
+\[(y_i - \bar y_.) = (\hat y_i - \bar y_.) + (y_i -\hat y_i)
+
+\]</div>
+<p>þar sem <span class="math">\(\bar y_.\)</span> er meðaltal <span class="math">\(y\)</span>-mælinganna og
+<span class="math">\(\hat y_i\)</span> er spágildið fyrir <span class="math">\(y_i\)</span>.</p>
+<p>Þegar aðhvarfsgreiningarlíkan er metið með jöfnu minnstu kvaðrata gildir
+enn fremur að</p>
+<div class="math">
+\[\sum_{i=1}^n (y_i - \bar y_.)^2 = \sum_{i=1}^n (\hat y_i - \bar y_.)^2 + \sum_{i=1}^n (y_i - \hat y_i)^2
+
+\]</div>
+<p>Út frá þessu reiknum við fervikasummur í einföldu línulegu aðhvarfi.</p>
+<div class="section" id="fervikasummur-i-einfoldu-linulegu-ahvarfi-sums-of-squares-in-a-simple-linear-regression-anova">
+<h4><span class="section-number">10.3.1.1. </span>Fervikasummur í einföldu línulegu aðhvarfi (sums of squares in a simple linear regression ANOVA)<a class="headerlink" href="#fervikasummur-i-einfoldu-linulegu-ahvarfi-sums-of-squares-in-a-simple-linear-regression-anova" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Fervikasummurnar eru reiknaðar með</p>
+<div class="math" id="equation-eq-sst-r">
+<span class="eqno">(10.7)<a class="headerlink" href="#equation-eq-sst-r" title="Permalink to this equation">¶</a></span>\[\begin{aligned}
+SS_T= & \sum_{i = 1}^{n} (y_{i} - \bar{y}_{.})^2\end{aligned},
+
+\]</div>
+<div class="math" id="equation-eq-ssr">
+<span class="eqno">(10.8)<a class="headerlink" href="#equation-eq-ssr" title="Permalink to this equation">¶</a></span>\[\begin{aligned}
+SS_R = & \sum_{i = 1}^{n} (\hat y_i - \bar y_.)^2\end{aligned},
+
+\]</div>
+<div class="math" id="equation-eq-sse-r">
+<span class="eqno">(10.9)<a class="headerlink" href="#equation-eq-sse-r" title="Permalink to this equation">¶</a></span>\[\begin{aligned}
+SS_E = & \sum_{i = 1}^{n} (y_i - \hat y_i)^2\end{aligned}
+
+\]</div>
+<p>Heildarbreytileikanum má skipta upp í breytileika metnu gildanna annars
+vegar og breytileika leifanna hins vegar eða</p>
+<div class="math" id="equation-eq-anovauppskiptingk9">
+<span class="eqno">(10.10)<a class="headerlink" href="#equation-eq-anovauppskiptingk9" title="Permalink to this equation">¶</a></span>\[SS_T = SS_{R} + SS_E
+
+\]</div>
+</div>
+<hr class="docutils" />
+<p>Algengt er að setja kvaðratsummurnar upp í svokallaða
+<em>fervikagreiningartöflu</em> (e. ANOVA table). Sú tafla samanstendur af þremur
+dálkum og þremur línum. Fyrsti dálkurinn inniheldur fervikasummurnar
+(reiknaðar með jöfnum <a class="reference internal" href="#equation-eq-sst-r">10.7</a> - <a class="reference internal" href="#equation-eq-sse-r">10.9</a>). Annar dálkurinn
+inniheldur fjölda <em>frígráða</em> fyrir hverja fervikasummu fyrir sig en það
+heiti bera stærðirnar <span class="math">\(1\)</span>, <span class="math">\(N-2\)</span> og <span class="math">\(N-1\)</span>. Þriðji
+dálkurinn inniheldur svokallaðar meðalfervikasummur. Þær reiknum við með
+því að deila viðkomandi fervikasummu með fjölda frígráða sem henni
+tilheyra (í sömu línu). Dæmigerða fervikasummutöflu má sjá hér að neðan.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Fervikasummur</p></th>
+<th class="head"><p>Frígráður</p></th>
+<th class="head"><p>Meðalfervikasummur</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math">\(SS_R\)</span></p></td>
+<td><p><span class="math">\(1\)</span></p></td>
+<td><p><span class="math">\(MS_R = SS_R\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math">\(SS_E\)</span></p></td>
+<td><p><span class="math">\(N - 2\)</span></p></td>
+<td><p><span class="math">\(MS_E = \frac{SS_E}{N - 2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math">\(SS_T\)</span></p></td>
+<td><p><span class="math">\(N - 1\)</span></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Fervikasummurnar má einnig nota til að reikna skýringarhlutfall með
+öðrum hætti. Sú framsetning útskýrir jafnvel enn betur hvers vegna
+<span class="math">\(r^2\)</span> stendur fyrir hlutfallslegan breytileika í <span class="math">\(Y\)</span> sem er
+hægt að skýra með breytingum á <span class="math">\(x\)</span>.</p>
+</div>
+<div class="section" id="skyringarhlutfall-r-2">
+<span id="em-skyringanova"></span><h4><span class="section-number">10.3.1.2. </span>Skýringarhlutfall (<span class="math">\(R^2\)</span>)<a class="headerlink" href="#skyringarhlutfall-r-2" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Skýringarhlutfall má reikna með jöfnunni</p>
+<div class="math">
+\[r^2 = \frac{SSR}{SST}
+
+\]</div>
+<p>Það stendur fyrir hlutfallslegan breytileika í <span class="math">\(Y\)</span> sem er hægt að
+skýra með breytingum á <span class="math">\(x\)</span>.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="tilgatuprof-i-fervikagreiningu-fyrir-ahvarfsgreiningu">
+<h3><span class="section-number">10.3.2. </span>Tilgátupróf í fervikagreiningu fyrir aðhvarfsgreiningu<a class="headerlink" href="#tilgatuprof-i-fervikagreiningu-fyrir-ahvarfsgreiningu" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Tilgátuprófið sem við notum í fervikagreiningu gerir ráð fyrir að
+frávikin frá aðhvarfslínunni séu i.i.d. normaldreifð. Það skilyrði má
+kanna með því að teikna normaldreifingarrit af leifunum.</p>
+<div class="section" id="tilgatuprof-fyrir-einhlia-fervikagreiningu">
+<span id="em-anovalm"></span><h4><span class="section-number">10.3.2.1. </span>Tilgátupróf fyrir einhliða fervikagreiningu<a class="headerlink" href="#tilgatuprof-fyrir-einhlia-fervikagreiningu" title="Varanlegur hlekkur á titilinn">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Athugið</p>
+<p>Tilgátan sem við viljum kanna er</p>
+<div class="math">
+\[H_0: \beta_1 = 0
+
+\]</div>
+<p>á móti gagntilgátunni</p>
+<div class="math">
+\[H_1: \beta_1 \neq 0
+
+\]</div>
+<p>Prófstærðin er</p>
+<div class="math" id="equation-eq-anovaprofk9">
+<span class="eqno">(10.11)<a class="headerlink" href="#equation-eq-anovaprofk9" title="Permalink to this equation">¶</a></span>\[F = \frac{SS_{R}/(1)}{SS_{E}/(N-2)} = \frac{MS_{R}}{MS_E}
+
+\]</div>
+<p>þar sem <span class="math">\(SS_R\)</span> og <span class="math">\(SS_{E}\)</span> má reikna með jöfnum <a class="reference internal" href="#equation-eq-ssr">10.8</a>
+og <a class="reference internal" href="kafli08_final.html#equation-eq-sse">9.5</a>. Sé núlltilgátan sönn fylgir prófstærðin F-dreifingu með
+<span class="math">\(1\)</span> og <span class="math">\(N-2\)</span> fjölda fríráða, eða <span class="math">\(F \sim F_{(1,N-2)}\)</span>,
+þar sem <span class="math">\(N\)</span> er heildarfjöldi mældra para.</p>
+<p>Hafna skal <span class="math">\(H_0\)</span> ef <span class="math">\(F &gt; F_{1-\alpha,(1,N-2)}\)</span>.</p>
+<p>Sé núlltilgátunni hafnað er <span class="math">\(\beta_1\)</span> frábrugðið núlli.</p>
+</div>
+<hr class="docutils" />
+<p>Þetta tilgátupróf er illframkvæmanlegt í höndunum en má reikna á
+einfaldan hátt í öllum helstu tölfræðiforritum.</p>
+</div>
+</div>
+</div>
+<div class="section" id="daemi">
+<h2><span class="section-number">10.4. </span>Dæmi<a class="headerlink" href="#daemi" title="Varanlegur hlekkur á titilinn">¶</a></h2>
+<div class="section" id="id3">
+<h3><span class="section-number">10.4.1. </span>Dæmi<a class="headerlink" href="#id3" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Jöfnu beinnar línu má skrifa sem</p>
+<div class="math">
+\[y = b_0 + b_1x
+
+\]</div>
+<p>Hver eru gildin á <span class="math">\(b_0\)</span> og <span class="math">\(b_1\)</span> fyrir línuna á myndinni hér
+að neðan?</p>
+<div class="figure align-default">
+<img alt="_images/beinlina.jpg" src="_images/beinlina.jpg" />
+</div>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">10.4.2. </span>Dæmi<a class="headerlink" href="#id4" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Eftirfarandi tölur sýna aldur lamba (í dögum) og þunga þeirra við vigtun
+að hausti.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>aldur</p></th>
+<th class="head"><p>þungi</p></th>
+<th class="head"><p>aldur</p></th>
+<th class="head"><p>þungi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>135</p></td>
+<td><p>39</p></td>
+<td><p>120</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-odd"><td><p>125</p></td>
+<td><p>37</p></td>
+<td><p>133</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>130</p></td>
+<td><p>38</p></td>
+<td><p>123</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>129</p></td>
+<td><p>38</p></td>
+<td><p>126</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-even"><td><p>121</p></td>
+<td><p>34</p></td>
+<td><p>130</p></td>
+<td><p>39</p></td>
+</tr>
+<tr class="row-odd"><td><p>125</p></td>
+<td><p>35</p></td>
+<td><p>126</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-even"><td><p>137</p></td>
+<td><p>38</p></td>
+<td><p>140</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-odd"><td><p>129</p></td>
+<td><p>36</p></td>
+<td><p>132</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-even"><td><p>121</p></td>
+<td><p>34</p></td>
+<td><p>137</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-odd"><td><p>137</p></td>
+<td><p>41</p></td>
+<td><p>137</p></td>
+<td><p>43</p></td>
+</tr>
+</tbody>
+</table>
+<p>Meðalaldur er 129.65 dagar og staðalfrávik 6.18. Meðalþyngd er 37.65 kg
+og staðalfrávik 3.10. Fylgnin milli aldurs og þunga er 0.86.</p>
+<ol class="loweralpha simple">
+<li><p>Finnið jöfnu aðhvarfslínu fyrir aldur lambanna og þunga þeirra.</p></li>
+<li><p>Hversu mikið af breytileikanum í þunga má skýra með aldri?</p></li>
+<li><p>Hversu mikið breytist þyngdin á 30 dögum skv. aðhvarfsgreiningunni?</p></li>
+<li><p>Spáið fyrir um þyngd lambs sem er 136 daga gamalt og gefið 95%
+öryggisbil fyrir spána, notið <span class="math">\(s_e = 1.64\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">10.4.3. </span>Dæmi<a class="headerlink" href="#id5" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Sigrún tölfræðingur er að hugsa um að kaupa sér íbúð í 101 Reykjavík.
+Hún hefur áhuga á íbúðum á bilinu 40 til 100 fermetrar af stærð. Sigrún
+ákveður því að taka slembiúrtak af stærð 50 af fasteignavef nokkrum. Hún
+skráir svo niður <code class="docutils literal notranslate"><span class="pre">verð</span></code> (í milljónum króna) og <code class="docutils literal notranslate"><span class="pre">stærð</span></code> (í fermetrum)
+íbúðanna í þeim tilgangi að skoða sambandið milli verðs og stærðar
+íbúðanna. Á myndinn hér að neðan má sjá punktrit af gögnunum.</p>
+<div class="figure align-center" id="g-sigrun">
+<img alt="Mynd" src="_images/ibudir1.svg" /></div>
+<p>Þið getið stuðst við eftirfarandi við útreikningana:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 33%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Breyta</p></th>
+<th class="head"><p>Meðaltal</p></th>
+<th class="head"><p>Staðalfrávik</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Verð</span></code></p></td>
+<td><p><strong>20.376</strong></p></td>
+<td><p><strong>3.526</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Stærð</span></code></p></td>
+<td><p><strong>71.040</strong></p></td>
+<td><p><strong>16.975</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Fylgnin (e. correlation) á milli verðs og stærðar er <strong>0.756</strong>.</p>
+<ol class="loweralpha">
+<li><p>Sigrún ákveður að framkvæma aðhvarfsgreiningu. Er breytan <code class="docutils literal notranslate"><span class="pre">verð</span></code>
+skýribreyta eða svarbreyta?</p></li>
+<li><p>Hvert er gildið á <span class="math">\(b_1\)</span> í jöfnu aðhvarfslínu minnstu kvaðrata
+fyrir gögnin hennar Sigrúnar?</p></li>
+<li><p>Hvert er gildið á <span class="math">\(b_0\)</span> í jöfnu aðhvarfslínu minnstu kvaðrata
+fyrir gögnin hennar Sigrúnar?</p></li>
+<li><p>Hversu stóran hluta af breytileikanum í verði íbúðanna má skýra með
+stærð?</p></li>
+<li><p>Sigrún hefur nú áhuga á að spá fyrir hversu mikið íbúð kostar sem er
+150 fermetrar af stærð. Væri Sigrún að brúa eða bryggja noti hún
+aðhvarfslínuna sem hún mat út frá gagnapunktunum 50?</p></li>
+<li><p>Eftir að hafa skoðað íbúðirnar 50 aðeins nánar fellur Sigrún
+kylliflöt fyrir íbúð á Haðarstíg. Sú íbúð er 96 fermetrar og kostar
+28.9 milljónir (sú dýrasta í gagnasafninu). Er leif þeirrar íbúðar
+jákæð eða neikvæð?</p>
+<p>Óli tölfræðingur er uppalinn í Breiðholtinu. Hann og Sigrún eru
+miklir vinir svo Óli vill eiga Sigrúnu sem nágranna. Óli tekur ekki í
+mál að búa í 101 Reykjavík svo hann ákveður að kanna samband milli
+verðs og stærðar íbúða í Breiðholtinu með það markmið að lokka
+Sigrúnu í Breiðholtið. Óli metur eftirfarandi aðhvarfslíkan út frá 50
+íbúðum á bilinu 40 til 100 fermetrar að stærð. Eins og í líkani
+Sigrúnar þá er verðið í milljónum króna og stærðin í fermetrum.</p>
+<div class="math">
+\[\hat{y} = 7.30 + 0.13x
+
+\]</div>
+</li>
+<li><p>Spáið fyrir um verð á 60 fermetra íbúð í Breiðholtinu.</p></li>
+<li><p>Hversu mikið hækkar verð íbúða í Breiðholtinu með hverjum fermetra
+samkvæmt líkaninu.</p></li>
+<li><p>Af íbúðunum 50 sem Óli hefur skoðað líst honum best á íbúð í
+Dúfnahólum 10. Hún er 80 fermetrar að stærð og kostar 16.5 milljónir.
+Hver er gildið á leif þeirrar íbúðar?</p></li>
+<li><p>Óli er mjög fær tölfræðingur. Því getum við gert ráð fyrir að
+aðhvarfslíkanið hans uppfylli öll skilyrði sem það þarf að uppfylla.
+Á mynd <a class="reference internal" href="#g-oli"><span class="std std-numref">10.8</span></a> má sjá fjögur leifarit. Hvert leifaritanna er
+leifarit aðhvarfslíkans Óla?</p>
+<div class="figure align-center" id="id15">
+<span id="g-oli"></span><img alt="Hvert er leifarit Óla?" src="_images/ibudir2.jpg" />
+<p class="caption"><span class="caption-number">Mynd 10.8: </span><span class="caption-text">Hvert er leifarit Óla?</span><a class="headerlink" href="#id15" title="Varanlegur hlekkur á þessa mynd">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">10.4.4. </span>Dæmi<a class="headerlink" href="#id6" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Til að rannsaka hljóðmengun á svæðinu í kringum Miklubraut var
+hljóðmælum komið fyrir með 20 metra millibili frá gatnamótunum
+Miklabraut - Langahlíð. Tvær breytur eru i gagnasafninu,
+<code class="docutils literal notranslate"><span class="pre">Hljóðstyrkur</span></code> og <code class="docutils literal notranslate"><span class="pre">Fjarlægð</span></code>.</p>
+<div class="figure align-center">
+<img alt="Mynd" src="_images/hljod1.svg" /></div>
+<p>Þið getið stuðst við eftirfarandi við útreikningana:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 29%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Breyta</p></th>
+<th class="head"><p>Meðaltal</p></th>
+<th class="head"><p>Staðalfrávik</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hljóðstyrkur</p></td>
+<td><p><strong>71.35</strong></p></td>
+<td><p><strong>7.35</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Fjarlægð</p></td>
+<td><p><strong>90.00</strong></p></td>
+<td><p><strong>46.41</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Fylgnin (e. correlation) á milli hljóðstyrks og fjarlægðar er <strong>-0.94</strong>.</p>
+<ol class="loweralpha simple">
+<li><p>Á myndinni hér að ofan má sjá punktrit af gögnunum. Á myndina er
+einnig búið að teikna línu minnstu kvaðrata (e. least square line). Hver
+er jafna þessarar línu? Gefið stikana (e. parameters) með tveimur
+aukastöfum (þið eigið að reikna út stærð stikana í jöfnunni ekki lesa
+þá út frá grafinu).</p></li>
+<li><p>Notið líkanið sem þið fenguð í lið a) til að spá (e. predict) fyrir um
+hljóðstyrk 90 metra annars vegar og hins vegar 500 metra frá
+gatnamótunum. Eru báðar þessar spár áreiðanlegar? Rökstyðjið svar
+ykkar.</p></li>
+<li><p>Hversu mikinn hluta af breytilekanum í hljóðstyrknum má skýra með
+fjarlægð frá gatnamótunum?</p></li>
+<li><p>Á myndinni hér að neðan má sjá samsvarandi gögn en frá tveimur öðrum
+stöðum í borginni. Á hvorum staðnum er sambandið milli hljóðstyrks og
+fjarlægðar sterkara? Rökstyðjið svarið ykkar.</p></li>
+</ol>
+<div class="figure align-center">
+<img alt="Mynd" src="_images/hljod2.svg" /></div>
+</div>
+<div class="section" id="id7">
+<h3><span class="section-number">10.4.5. </span>Dæmi<a class="headerlink" href="#id7" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<p>Umskrifið jöfnuna fyrir skýringarhlutfall í kassa
+<a class="reference internal" href="#em-skyringarhlutfall"><span class="std std-numref">10.1.5.1</span></a> til að sýna að hún sé jafngild jöfnunni
+fyrir skýringarhlutfall í kassa <a class="reference internal" href="#em-skyringanova"><span class="std std-numref">10.3.1.2</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="kafli10_final.html" class="btn btn-neutral float-right" title="11. Tvíkosta aðhvarfsgreining" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="kafli08_final.html" class="btn btn-neutral" title="9. Fervikagreining" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2018',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script>
+      <script type="text/javascript" src="_static/katex_autorenderer.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+	
+
+
+
+</body>
+</html>
