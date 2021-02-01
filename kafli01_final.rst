@@ -1053,10 +1053,10 @@ Dæmi
 
 Gunnar Þór þrekþjálfari telur að það séu sterk tengsl milli matarvenja
 og heilsu. Hann framkvæmir því tilraun þar sem hann parar saman tvo og
-tvo nemendur sem honum þykir svipaðir að þreki. Hann lætur svo annan
-meðlim hvers pars á sérstakt mataræði á meðan hinn borðar eins og hann
-er vanur. Þáttakendur eru á þessu mataræði í 4 vikur en að því loknu eru
-framkvæmd þrekpróf á öllum einstaklingunum.
+tvo nemendur, sem valdir voru með slembiúrtaki, sem honum þykir svipaðir
+að þreki. Hann lætur svo annan meðlim hvers pars á sérstakt mataræði á
+meðan hinn borðar eins og hann er vanur. Þáttakendur eru á þessu mataræði
+í 4 vikur en að því loknu eru framkvæmd þrekpróf á öllum einstaklingunum.
 
 a) Er úrtakið sem Gunnar Þór valdi dæmi um: lagskipt slembiúrtak,
    einfalt slembiúrtak, parað slembiúrtak eða sjálfboðaúrtak?

@@ -28,6 +28,8 @@ Svör við dæmum
 
 #) Samfelld talnabreyta.
 
+#) 
+
 #) Systkin er strjál talnabreyta. Barrnálar eru strangt til tekið strjál
    talnabreyta en þó væri sennilega auðveldara að meðhöndla hana sem
    samfellda.
