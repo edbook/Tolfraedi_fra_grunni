@@ -25,3 +25,4 @@ Viðaukar
    svor_final
    ordalistar
    um_hofunda
+   thakkir
